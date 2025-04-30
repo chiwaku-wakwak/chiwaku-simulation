@@ -104,6 +104,10 @@ const WaveSpeedCanvas: React.FC = () => {
   const [locked, setLocked] = useState(false);
   const [started, setStarted] = useState(false);
   const dt = 0.01;
+  const angles = Array.from(
+    { length: 7200 },
+    (_, i) => (i * Math.PI) / 10 / 360
+  );
 
   // 初期描画（背景＋グリッド）
   useEffect(() => {
@@ -210,10 +214,7 @@ const WaveSpeedCanvas: React.FC = () => {
     setLocked(true);
 
     if (!started) {
-      const angles = Array.from(
-        { length: 7200 },
-        (_, i) => (i * Math.PI) / 10 / 360
-      ); // 初回のみレイ生成
+      // 初回のみレイ生成
       setRays(
         angles.map((theta) => ({
           x: origin.x,
@@ -236,16 +237,21 @@ const WaveSpeedCanvas: React.FC = () => {
   return (
     <div>
       <div>
-        {running === false && (
-          <button onClick={handleStart}>{"開始/再開"}</button>
+        {running === false  && started === false && (
+          <button onClick={handleStart}>開始</button>
         )}
-        {running === true && <button onClick={handleStop}>{"停止"}</button>}
+        {running === false && started === true && (
+            <button onClick={handleStart}>再開</button>
+            )}
+        {running === true && <button onClick={handleStop}>停止</button>}
         <button
           onClick={() => {
+            setOrigin({ x: origin.x, y: origin.y });
+            setRays([]);
             setTime(0);
+            setStarted(false);
             setRunning(false);
             setLocked(false);
-            setRays([]);
           }}
         >
           リセット
@@ -254,7 +260,9 @@ const WaveSpeedCanvas: React.FC = () => {
           <span>時刻: {time.toFixed(2)} 秒</span>
         </div>
         <div className="time">
-            <span>震源位置: ({origin.x.toFixed(2)}, {origin.y.toFixed(2)})</span>
+          <span>
+            震源位置: ({origin.x.toFixed(2)}, {origin.y.toFixed(2)})
+          </span>
         </div>
       </div>
       <canvas
