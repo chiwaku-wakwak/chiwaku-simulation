@@ -13,13 +13,26 @@ body {
 
 canvas {
   border: 1px solid #444;
-  margin-top: 20px;
-  margin: 15px;
+  margin: 8px;
   border-radius: 5px;
+  display: block;
 }
 
+/* ボタンや時刻表示の部分 */
+.button-container {
+  position: relative;
+  z-index: 2; /* ボタンが canvas の上に来るように調整 */
+}
+
+/* canvas の設定 */
+.wave_speed {
+  position: relative;
+  z-index: 0; /* canvas が他の要素の下に表示される */
+}
+
+
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--foreground);
 }
 
@@ -35,7 +48,7 @@ button {
 }
 
 .time {
-  display : inline;
+  display : inline-block;
   padding: 8px;
   margin: 3px;
   background-color: #00ffea;
@@ -44,5 +57,14 @@ button {
 
 .App {
   margin: 10px;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .time_epicenter {
+    display : inline;
+  }
 }
 
