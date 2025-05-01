@@ -151,6 +151,28 @@ const WaveSpeedCanvas: React.FC = () => {
       ctx.stroke();
     }
 
+    // 目盛（X軸・Y軸のラベル）
+    ctx.fillStyle = "black";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+
+    for (let x = -40; x <= 40; x++) {
+      const { px: x1, py: y1 } = physicalToScreen(x, -20, width, height);
+      const { px: x2, py: y2 } = physicalToScreen(x, 0, width, height);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+
+      // X軸ラベルを表示
+      if (x % 5 === 0) {
+        ctx.fillStyle = "black";
+        ctx.font = "12px sans-serif";
+        ctx.fillText(`${x}`, x1 + 2, y2 - 2);
+      }
+    }
+
     const { px, py } = physicalToScreen(origin.x, origin.y, width, height);
     ctx.fillStyle = "black";
     ctx.beginPath();
