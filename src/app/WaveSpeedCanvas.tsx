@@ -177,6 +177,37 @@ const WaveSpeedCanvas: React.FC = () => {
     ctx.fillStyle = "black";
     ctx.beginPath();
     ctx.arc(px, py, 5, 0, 2 * Math.PI);
+    // --- 速度凡例（Legend） ---
+    const legendX = width - 50; // 右下に配置（必要に応じて調整）
+    const legendY = height - 120;
+    const legendWidth = 20;
+    const legendHeight = 100;
+    const numSteps = 50;
+
+    ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+    ctx.fillRect(legendX - 5, legendY - 30, 70, legendHeight + 40);
+
+    for (let i = 0; i <= numSteps; i++) {
+      const v = (i / numSteps) * 6.0;
+      ctx.fillStyle = speedToColor(v);
+      ctx.fillRect(
+        legendX,
+        legendY + (1 - i / numSteps) * legendHeight,
+        legendWidth,
+        legendHeight / numSteps
+      );
+    }
+
+    ctx.strokeStyle = "gray";
+    ctx.strokeRect(legendX, legendY, legendWidth, legendHeight);
+    ctx.fillStyle = "black";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+    ctx.fillText("6.0", legendX + 25, legendY);
+    ctx.fillText("3.0", legendX + 25, legendY + legendHeight / 2);
+    ctx.fillText("0.0", legendX + 25, legendY + legendHeight);
+    ctx.fillText("速度", legendX, legendY - 15);
     ctx.fill();
   }, [canvasSize, origin, number]);
 
