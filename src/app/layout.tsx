@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "地震波伝播シミュレーション（家庭版）",
+  title: "五月祭地球惑星系：シミュレーション班",
   description: "五月祭で展示されるシミュレーションの簡易版をご家庭でも。",
 };
 
