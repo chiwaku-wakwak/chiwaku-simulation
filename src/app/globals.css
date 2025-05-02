@@ -6,9 +6,17 @@
 }
 
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f0f0f0;
+  font-family: "游ゴシック Light", sans-serif;
+  font-size: 15px;
+  margin: 0px;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+header {
+  color: #fff;
+  padding: 0px;
+  background-color: #8ffdf1;
 }
 
 canvas {
@@ -30,12 +38,24 @@ canvas {
   z-index: 0; /* canvas が他の要素の下に表示される */
 }
 
-
 h1 {
   font-size: 1.8rem;
   color: var(--foreground);
 }
 
+li {
+  list-style-type: disc;
+}
+
+ul {
+  list-style-type: disc !important;
+  padding: 15px;
+}
+
+a {
+  color: #008cff;
+  text-decoration: underline;
+}
 button {
   background-color: #00ff77;
   color: rgb(70, 70, 70);
@@ -48,7 +68,7 @@ button {
 }
 
 .time {
-  display : inline-block;
+  display: inline-block;
   padding: 8px;
   margin: 3px;
   background-color: #00ffea;
@@ -59,12 +79,15 @@ button {
   margin: 10px;
 }
 
+.gh-mark a{
+  display: inline;
+}
+
 @media (min-width: 600px) {
   h1 {
     font-size: 2rem;
   }
   .time_epicenter {
-    display : inline;
+    display: inline;
   }
 }
-
