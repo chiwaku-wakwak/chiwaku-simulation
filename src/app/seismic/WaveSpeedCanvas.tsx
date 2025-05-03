@@ -305,7 +305,7 @@ const WaveSpeedCanvas: React.FC = () => {
         {running === false && started === true && (
           <button className="function" onClick={handleStart}>再開</button>
         )}
-        {running === true && <button onClick={handleStop}>停止</button>}
+        {running === true && <button className="function" onClick={handleStop}>停止</button>}
         <button
           className="function" 
           onClick={() => {
