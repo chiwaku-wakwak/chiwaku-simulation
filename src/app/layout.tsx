@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "五月祭地球惑星系：シミュレーション班",
-  description: "五月祭で展示されるシミュレーションの簡易版をご家庭でも。",
+  description: "こんにちは。理学部地球惑星物理・環境学科シミュレーション班です。理学部1号館105教室でシミュレーションを展示します。",
 };
 
 export default function RootLayout({
