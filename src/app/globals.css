@@ -38,11 +38,6 @@ canvas {
   z-index: 0; /* canvas が他の要素の下に表示される */
 }
 
-h1 {
-  font-size: 1.8rem;
-  color: var(--foreground);
-}
-
 li {
   list-style-type: disc;
 }
@@ -52,11 +47,7 @@ ul {
   padding: 15px;
 }
 
-a {
-  color: #008cff;
-  text-decoration: underline;
-}
-button {
+.function {
   background-color: #00ff77;
   color: rgb(70, 70, 70);
   border: none;
@@ -83,11 +74,24 @@ button {
   display: inline;
 }
 
-@media (min-width: 600px) {
+.space-box {
+  display: flex;
+  margin: 0px 30px;
+  justify-items: center;
+}
+
+@media (min-width: 800px) {
   h1 {
     font-size: 2rem;
   }
   .time_epicenter {
     display: inline;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    margin : 0px 100px;
+    justify-items: center;
   }
 }

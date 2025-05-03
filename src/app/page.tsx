@@ -1,51 +1,39 @@
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import "./globals.css";
 
-const App: React.FC = () => {
-  const styles = {
-    header: {
-      display: "flex",
-      alignItems: "center",
-    } as React.CSSProperties,
-    title: {
-      margin: 0,
-      fontSize: "24px",
-    } as React.CSSProperties,
-    link: {
-      marginLeft: "10px",
-    } as React.CSSProperties,
-  };
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+export default function Home() {
   return (
-    <div className="App">
-      <div style={styles.header}>
-        <h1 style={styles.title}>五月祭地球惑星系：シミュレーション班</h1>
-        <a
-          style={styles.link}
-          href="https://github.com/random776/seismic_tsx"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* Replacing <img> with <Image /> */}
-          <Image
-            src="/github-mark.png"
-            alt="GitHub Mark"
-            width={30}
-            height={30}
-          />
-        </a>
-      </div>
-      <p>⚠️ 五月祭開始までこのurlを一般公開しないこと.</p>
-      <ul>
-        <li>
-          <a href="/seismic">地震波伝播シミュレーション</a>
-        </li>
-        <li>
-          <a href="/pendulum">二重振り子シミュレーション</a>
-        </li>
-      </ul>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow pt-20 px-4">
+        <h1 className="text-2xl font-bold mb-4">
+          シミュレーション班・公式ページへようこそ
+        </h1>
+        <p>⚠️ 五月祭開始までこのurlを一般公開しないこと.</p>
+        <ul className="list-disc pl-5 mt-4">
+          <li>
+            <Link href="/pendulum" className="text-blue-600 underline">
+              二重振り子シミュレーション
+            </Link>
+          </li>
+          <li>
+            <Link href="/seismic" className="text-blue-600 underline">
+              地震波伝播シミュレーション
+            </Link>
+          </li>
+        </ul>
+        <h2 className="text-xl font-bold mt-8 mb-4">お知らせ</h2>
+        <h3 className="text-lg font-bold mb-2">五月祭総選挙について</h3>
+        <p className="mb-2">
+          五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第 98
+          回五月祭 HP の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
+        </p>
+      </main>
+      <Footer />
     </div>
   );
-};
-
-export default App;
+}

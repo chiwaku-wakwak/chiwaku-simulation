@@ -9,12 +9,13 @@ const DoublePendulum: React.FC = () => {
   const startRef = useRef(false);
   const zeroRef = useRef(true);
   const resetRef = useRef(false);
-  const [number, setNumber] = useState(0);
+  const numberRef = useRef(0);
+  const [array, setArray] = useState<number[]>([0, 2, 1, 2, 0.5]);
 
-  const l1Ref = useRef(1);
+  const l1Ref = useRef(2);
   const l2Ref = useRef(1);
   const m1Ref = useRef(2);
-  const m2Ref = useRef(1);
+  const m2Ref = useRef(0.5);
 
   const θ1Ref = useRef(Math.PI / 2);
   const θ2Ref = useRef(Math.PI / 2);
@@ -23,21 +24,6 @@ const DoublePendulum: React.FC = () => {
 
   const g = 9.81;
   const dt = 0.015;
-
-  useEffect(() => {
-    if (number === 0) {
-      m1Ref.current = 2;
-      m2Ref.current = 0.5;
-      l1Ref.current = 2;
-      l2Ref.current = 1;
-    } else if (number === 1) {
-      m1Ref.current = 2;
-      m2Ref.current = 0.5;
-      l1Ref.current = 1;
-      l2Ref.current = 2;
-    }
-    console.log(number);
-  }, [number]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,7 +38,6 @@ const DoublePendulum: React.FC = () => {
         canvas.width = 770;
       }
       canvas.height = window.innerHeight * 0.6;
-      console.log(window.innerWidth, canvas.width);
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
@@ -282,29 +267,49 @@ const DoublePendulum: React.FC = () => {
   };
 
   const handleNumber = () => {
-    setNumber((prev) => (prev === 0 ? 1 : 0));
+    if (numberRef.current === 0) {
+      // 物理量とレンダリングする量を分けて代入する
+      numberRef.current = 1;
+      m1Ref.current = 2;
+      m2Ref.current = 0.5;
+      l1Ref.current = 2;
+      l2Ref.current = 1;
+    } else if (numberRef.current === 1) {
+      numberRef.current = 0;
+      m1Ref.current = 2;
+      m2Ref.current = 0.5;
+      l1Ref.current = 1;
+      l2Ref.current = 2;
+    }
+    setArray([
+      numberRef.current,
+      m1Ref.current,
+      m2Ref.current,
+      l1Ref.current,
+      l2Ref.current,
+    ]);
   };
 
   return (
     <>
-      <button onClick={handleReset}>リセット</button>
-      {startRef.current && <button onClick={handleStart}>停止</button>}
+      <button className="function" onClick={handleReset}>リセット</button>
+      {startRef.current && <button className="function" onClick={handleStart}>停止</button>}
       {!startRef.current && zeroRef.current && (
-        <button onClick={handleStart}>開始</button>
+        <button className="function"  onClick={handleStart}>開始</button>
       )}
       {!startRef.current && !zeroRef.current && (
-        <button onClick={handleStart}>再開</button>
+        <button className="function"  onClick={handleStart}>再開</button>
       )}
-      <button onClick={handleNumber}>条件{number + 1}</button>
+      <button className="function"  onClick={handleNumber}>条件{array[0] + 1}</button>
       <div className="time">
         <span>時刻: {time.toFixed(2)} 秒</span>
       </div>
       <div className="time_epicenter">
         <div className="time">
-          紐の長さ: {l1Ref.current} m, {l2Ref.current} m
+          紐の長さ: {array[3]} m, {array[4]} m
         </div>
         <div className="time">
-          おもりの質量: {m1Ref.current} kg, {m2Ref.current} kg
+          おもりの質量: {array[1]} kg, {array[2]} kg
         </div>
       </div>
       <canvas ref={canvasRef} />

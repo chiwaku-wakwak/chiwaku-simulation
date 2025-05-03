@@ -300,13 +300,14 @@ const WaveSpeedCanvas: React.FC = () => {
     <div ref={containerRef} style={{ width: "100%", position: "relative" }}>
       <div className="button_container">
         {running === false && started === false && (
-          <button onClick={handleStart}>開始</button>
+          <button className="function" onClick={handleStart}>開始</button>
         )}
         {running === false && started === true && (
-          <button onClick={handleStart}>再開</button>
+          <button className="function" onClick={handleStart}>再開</button>
         )}
         {running === true && <button onClick={handleStop}>停止</button>}
         <button
+          className="function" 
           onClick={() => {
             setOrigin({ x: origin.x, y: origin.y });
             setRays([]);
@@ -319,6 +320,7 @@ const WaveSpeedCanvas: React.FC = () => {
           リセット
         </button>
         <button
+          className="function" 
           onClick={() => {
             if (number === 0) {
               setNumber(1);
