@@ -10,12 +10,19 @@ const DoublePendulum: React.FC = () => {
   const zeroRef = useRef(true);
   const resetRef = useRef(false);
   const numberRef = useRef(0);
-  const [array, setArray] = useState<number[]>([0, 2, 1, 2, 0.5]);
 
   const l1Ref = useRef(2);
   const l2Ref = useRef(1);
   const m1Ref = useRef(2);
   const m2Ref = useRef(0.5);
+
+  const [array, setArray] = useState<number[]>([
+    numberRef.current,
+    m1Ref.current,
+    m2Ref.current,
+    l1Ref.current,
+    l2Ref.current,
+  ]);
 
   const θ1Ref = useRef(Math.PI / 2);
   const θ2Ref = useRef(Math.PI / 2);
@@ -272,14 +279,14 @@ const DoublePendulum: React.FC = () => {
       numberRef.current = 1;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
-      l1Ref.current = 2;
-      l2Ref.current = 1;
+      l1Ref.current = 1;
+      l2Ref.current = 2;
     } else if (numberRef.current === 1) {
       numberRef.current = 0;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
-      l1Ref.current = 1;
-      l2Ref.current = 2;
+      l1Ref.current = 2;
+      l2Ref.current = 1;
     }
     setArray([
       numberRef.current,
@@ -292,15 +299,27 @@ const DoublePendulum: React.FC = () => {
 
   return (
     <>
-      <button className="function" onClick={handleReset}>リセット</button>
-      {startRef.current && <button className="function" onClick={handleStart}>停止</button>}
+      <button className="function" onClick={handleReset}>
+        リセット
+      </button>
+      {startRef.current && (
+        <button className="function" onClick={handleStart}>
+          停止
+        </button>
+      )}
       {!startRef.current && zeroRef.current && (
-        <button className="function"  onClick={handleStart}>開始</button>
+        <button className="function" onClick={handleStart}>
+          開始
+        </button>
       )}
       {!startRef.current && !zeroRef.current && (
-        <button className="function"  onClick={handleStart}>再開</button>
+        <button className="function" onClick={handleStart}>
+          再開
+        </button>
       )}
-      <button className="function"  onClick={handleNumber}>条件{array[0] + 1}</button>
+      <button className="function" onClick={handleNumber}>
+        条件{array[0] + 1}
+      </button>
       <div className="time">
         <span>時刻: {time.toFixed(2)} 秒</span>
       </div>
