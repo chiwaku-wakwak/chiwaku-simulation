@@ -14,6 +14,12 @@ export default function Home() {
           シミュレーション班・公式ページへようこそ
         </h1>
         <p>⚠️ 五月祭開始までこのurlを一般公開しないこと.</p>
+        <h2 className="text-xl font-bold mt-8 mb-4">お試しシミュレーション</h2>
+
+        <p className="mb-2">
+          シミュレーションのイメージを掴んでいただくために、実際の企画で展示するシミュレーションの簡易版をここに置きます。
+        </p>
+
         <ul className="list-disc pl-5 mt-4">
           <li>
             <Link href="/pendulum" className="text-blue-600 underline">
