@@ -32,6 +32,7 @@ const Header: React.FC = () => {
 
         {/* ナビゲーション（PC） */}
         <nav className="hidden md:flex space-x-6 text-gray-700 text-sm">
+          <Link href="/">ホーム</Link>
           <Link href="/pendulum">二重振り子</Link>
           <Link href="/seismic">地震波</Link>
           <Link
@@ -48,6 +49,9 @@ const Header: React.FC = () => {
       {isOpen && (
         <div className="md:hidden px-4 py-6 pb-3 bg-white">
           <nav className="flex flex-col space-y-2 text-gray-700 text-sm">
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              ホーム
+            </Link>
             <Link href="/pendulum" onClick={() => setIsOpen(false)}>
               二重振り子
             </Link>

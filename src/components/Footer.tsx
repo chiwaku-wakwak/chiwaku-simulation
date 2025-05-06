@@ -14,6 +14,9 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} 五月祭地球惑星系：シミュレーション班
         </p>
         <div className="flex space-x-4">
+        <Link href="/" className="hover:underline">
+            ホーム
+          </Link>
           <Link href="/pendulum" className="hover:underline">
             二重振り子
           </Link>

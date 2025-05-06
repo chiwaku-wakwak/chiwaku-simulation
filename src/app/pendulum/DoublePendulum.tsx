@@ -11,8 +11,8 @@ const DoublePendulum: React.FC = () => {
   const resetRef = useRef(false);
   const numberRef = useRef(0);
 
-  const l1Ref = useRef(2);
-  const l2Ref = useRef(1);
+  const l1Ref = useRef(0.5);
+  const l2Ref = useRef(0.25);
   const m1Ref = useRef(2);
   const m2Ref = useRef(0.5);
 
@@ -24,8 +24,10 @@ const DoublePendulum: React.FC = () => {
     l2Ref.current,
   ]);
 
-  const θ1Ref = useRef(Math.PI / 2);
-  const θ2Ref = useRef(Math.PI / 2);
+  const init_theta = 1.2 * Math.PI / 2
+
+  const θ1Ref = useRef(init_theta);
+  const θ2Ref = useRef(init_theta);
   const ω1Ref = useRef(0);
   const ω2Ref = useRef(0);
 
@@ -51,7 +53,7 @@ const DoublePendulum: React.FC = () => {
 
     const draw = () => {
       const originX = canvas.width / 2;
-      const originY = canvas.height / 4;
+      const originY = canvas.height / 3;
       const scale =
         Math.min(canvas.width, canvas.height) /
         (2 * (l1Ref.current + l2Ref.current));
@@ -96,8 +98,8 @@ const DoublePendulum: React.FC = () => {
 
       const rk4 = () => {
         if (resetRef.current) {
-          θ1Ref.current = Math.PI / 2;
-          θ2Ref.current = Math.PI / 2;
+          θ1Ref.current = init_theta
+          θ2Ref.current = init_theta;
           ω1Ref.current = 0;
           ω2Ref.current = 0;
           resetRef.current = false;
@@ -217,8 +219,8 @@ const DoublePendulum: React.FC = () => {
       }
 
       if (resetRef.current) {
-        θ1Ref.current = Math.PI / 2;
-        θ2Ref.current = Math.PI / 2;
+        θ1Ref.current = init_theta;
+        θ2Ref.current = init_theta;
         ω1Ref.current = 0;
         ω2Ref.current = 0;
         resetRef.current = false;
@@ -279,14 +281,14 @@ const DoublePendulum: React.FC = () => {
       numberRef.current = 1;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
-      l1Ref.current = 1;
-      l2Ref.current = 2;
+      l1Ref.current = 0.25;
+      l2Ref.current = 0.5;
     } else if (numberRef.current === 1) {
       numberRef.current = 0;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
-      l1Ref.current = 2;
-      l2Ref.current = 1;
+      l1Ref.current = 0.5;
+      l2Ref.current = 0.25;
     }
     setArray([
       numberRef.current,
@@ -299,9 +301,6 @@ const DoublePendulum: React.FC = () => {
 
   return (
     <>
-      <button className="function" onClick={handleReset}>
-        リセット
-      </button>
       {startRef.current && (
         <button className="function" onClick={handleStart}>
           停止
@@ -317,6 +316,9 @@ const DoublePendulum: React.FC = () => {
           再開
         </button>
       )}
+      <button className="function" onClick={handleReset}>
+        リセット
+      </button>
       <button className="function" onClick={handleNumber}>
         条件{array[0] + 1}
       </button>
@@ -325,7 +327,7 @@ const DoublePendulum: React.FC = () => {
       </div>
       <div className="time_epicenter">
         <div className="time">
-          紐の長さ: {array[3]} m, {array[4]} m
+          棒の長さ: {array[3]} m, {array[4]} m
         </div>
         <div className="time">
           おもりの質量: {array[1]} kg, {array[2]} kg

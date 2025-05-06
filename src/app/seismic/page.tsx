@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="pt-25 px-2">
+      <main className="pt-25 px-4 lg:px-25">
         <h1 className="text-2xl font-bold mb-4">
           地震波伝播シミュレーション（お試し版）
         </h1>

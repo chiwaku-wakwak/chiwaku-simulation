@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <>
       <Header />
       {/* pt-20 = padding-top: 5rem (＝約80px。Header 高さに応じて調整) */}
-      <main className="pt-25 px-2">
+      <main className="pt-25 px-4 lg:px-25">
         <h1 className="text-2xl font-semibold mb-4">
           二重振り子シミュレーション（お試し版）
         </h1>
