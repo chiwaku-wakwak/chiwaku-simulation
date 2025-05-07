@@ -14,7 +14,7 @@ const Header: React.FC = () => {
           <span className="no-underline">
             <Link href="/">
               <span className="text-lg md:text-xl font-semibold text-gray-700">
-                五月祭地球惑星系：シミュレーション班
+                2025五月祭・地惑わくわく：シミュレーション班
               </span>
             </Link>
           </span>

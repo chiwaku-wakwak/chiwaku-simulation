@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
 import { Link as Scroll } from "react-scroll";
+import { ChevronDown } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,27 +27,30 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-6xl">
+          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-4xl">
             地球と惑星の「謎」を
           </h1>
-          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-6xl">
-            <span className="text-cyan-300 text-3xl lg:text-5xl">仮想現実</span>
+          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-4xl">
+            <span className="text-4xl font-bold mb-4 text-cyan-300 lg:!text-6xl">
+              仮想現実
+            </span>
             で解き明かせ。
           </h1>
-          <p className="text-slate-200 py-2 lg:w-2/3">
-            21世紀の理学・工学分野で、なくてはならない手法になっているシミュレーション。地球・惑星科学においても、気象予報や太陽活動の予測などで大いに活用されています。
+
+          <p className="text-slate-200 py-1 lg:w-2/3">
+            21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の予測などで大いに活用されています。
           </p>
-          <p className="text-slate-200 py-3 lg:w-2/3">
-            身近で直感的なテーマを中心に、その一端をみなさんにも体感していただくために、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
+          <p className="text-slate-200 py-4 lg:w-2/3">
+            その一端をみなさんにも体感していただくため、身近で直感的なテーマを中心に、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
           </p>
           <Scroll
             to="simulation"
             smooth={true}
             duration={400}
             offset={-30}
-            className="inline-block px-6 py-2 bg-sky-500 hover:bg-sky-600 text-white text-lg font-semibold rounded-lg shadow-md transition"
+            className="inline-block px-6 py-2 border border-sky-300 bg-sky-500 hover:bg-sky-600 hover:border-sky-500 text-white text-lg font-semibold rounded-4xl shadow-md transition"
           >
-            はじめる
+            はじめる <ChevronDown className="inline ml-2" />
           </Scroll>
         </div>
       </div>
@@ -84,8 +88,8 @@ export default function Home() {
               <Image
                 src="/seismic.jpg"
                 alt="地震波伝播シミュレーション"
-                width={400}
-                height={250}
+                width={500}
+                height={400}
                 className="rounded-xl mb-2 object-cover h-48"
               />
               <hr className="border-t border-gray-300 mb-2" />

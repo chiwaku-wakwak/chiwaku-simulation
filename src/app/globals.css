@@ -89,9 +89,7 @@ ul {
 }
 
 @media (min-width: 800px) {
-  h1 {
-    font-size: 2rem;
-  }
+  
   .time_epicenter {
     display: inline;
   }
