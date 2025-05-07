@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full bg-white shadow-md z-50">
+    <header className="fixed top-0 w-full bg-white shadow-md z-50 opacity-90">
       <div className="flex items-center justify-between px-4 py-3 md:px-8 bg-white">
         {/* ロゴとタイトル */}
         <div className="flex items-center space-x-3">

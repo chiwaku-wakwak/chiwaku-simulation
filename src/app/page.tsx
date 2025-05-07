@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
 import { Link as Scroll } from "react-scroll";
-import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -55,11 +56,11 @@ export default function Home() {
         </div>
       </div>
       <div className="flex-grow pt-0 pb-10 px-4 lg:px-25" id="simulation">
-        <h2 className="text-xl font-bold mt-8 mb-4" id="simulation">
+        <h2 className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block" id="simulation">
           お試しシミュレーション
         </h2>
 
-        <p className="mb-2">
+        <p className="mb-2 py-3">
           シミュレーションのイメージを掴んでいただくために、実際の企画で展示するシミュレーションの簡易版をここに置きます。
         </p>
 
@@ -102,14 +103,40 @@ export default function Home() {
             </div>
           </Link>
         </div>
+        </div>
+        <div className="bg-sky-700">
+          <div className="px-4 mx-2 my-8 py-5 bg-sky-100 rounded-md lg:mx-20 shadow-2xl opacity-90">
 
-        <h2 className="text-xl font-bold mt-8 mb-4">お知らせ</h2>
-        <h3 className="text-lg font-bold mb-2">五月祭総選挙について</h3>
+        <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+          地球惑星科学専攻でのシミュレーション研究を知る
+        </h2>
+
+        <p className="mb-2 py-3">
+          地球・惑星科学のなかでも、シミュレーションを用いた研究は多岐にわたります。研究内容を一般向けに紹介している「
+          <Link href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">
+            プレスリリース
+          </Link>
+          」を読んでみましょう（地球惑星科学専攻HPに飛びます）。
+        </p>
+        <div className="pb-5">
+
+        <Link
+          href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+          className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+        >
+          調べる <ChevronRight className="inline ml-2" />
+        </Link>
+
+        </div>
+
+        <h2 className="text-xl py-3 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">お知らせ</h2>
+        <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
         <p className="mb-2">
           五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
           98 回五月祭 HP
           の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
         </p>
+        </div>
       </div>
       <Footer />
     </div>
