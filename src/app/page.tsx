@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
 import { Link as Scroll } from "react-scroll";
-import { motion } from "framer-motion";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 import Header from "@/components/Header";
