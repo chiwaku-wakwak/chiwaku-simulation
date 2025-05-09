@@ -14,48 +14,57 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="bg-sky-700">
-        <div className="flex-grow pt-25 pb-10 px-4 lg:px-25">
+      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
+        <Image
+          src="/background.jpg"
+          alt="シミュレーション班の写真"
+          fill
+          className="object-cover min-w-full min-h-full opacity-90"
+        />
+      </div>
+      <div className="">
+        <div className="flex-grow pt-30 pb-10 px-6 lg:px-25 lg:pt-75">
           {/* 画像を右寄せするために flex を追加 */}
-          <div className="flex justify-end py-3">
-            <Image
-              src="/simulation_photo.png"
-              alt="シミュレーション班の写真"
-              width={450}
-              height={350}
-              className="rounded-md mb-2 object-contain"
-            />
+          <div className="flex justify-end py-3"></div>
+
+          <div className="inline-block opacity-92 bg-sky-800 px-6 py-8 rounded-md lg:w-2/3">
+            <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
+              地球と惑星の「謎」を
+            </h1>
+            <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
+              <span className="text-4xl font-bold mb-4 text-cyan-300 lg:!text-6xl">
+                仮想現実
+              </span>
+              で解き明かせ。
+            </h1>
+
+            <p className="text-white py-1">
+              21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の予測などで大いに活用されています。
+            </p>
+            <p className="text-white py-4">
+              その一端をみなさんにも体感していただくため、身近で直感的なテーマを中心に、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
+            </p>
+            <Scroll
+              to="simulation"
+              smooth={true}
+              duration={400}
+              offset={-30}
+              className="inline-block px-6 py-2 border border-sky-300 bg-sky-500 hover:bg-sky-600 hover:border-sky-500 text-white text-lg font-semibold rounded-4xl shadow-md transition"
+            >
+              はじめる <ChevronDown className="inline ml-2" />
+            </Scroll>
           </div>
-
-          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-4xl">
-            地球と惑星の「謎」を
-          </h1>
-          <h1 className="text-2xl font-bold mb-4 text-slate-200 lg:text-4xl">
-            <span className="text-4xl font-bold mb-4 text-cyan-300 lg:!text-6xl">
-              仮想現実
-            </span>
-            で解き明かせ。
-          </h1>
-
-          <p className="text-slate-200 py-1 lg:w-2/3">
-            21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の予測などで大いに活用されています。
-          </p>
-          <p className="text-slate-200 py-4 lg:w-2/3">
-            その一端をみなさんにも体感していただくため、身近で直感的なテーマを中心に、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
-          </p>
-          <Scroll
-            to="simulation"
-            smooth={true}
-            duration={400}
-            offset={-30}
-            className="inline-block px-6 py-2 border border-sky-300 bg-sky-500 hover:bg-sky-600 hover:border-sky-500 text-white text-lg font-semibold rounded-4xl shadow-md transition"
-          >
-            はじめる <ChevronDown className="inline ml-2" />
-          </Scroll>
         </div>
       </div>
-      <div className="flex-grow pt-0 pb-10 px-4 lg:px-25" id="simulation">
-        <h2 className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block" id="simulation">
+      <div
+        className="flex-grow pt-0 pb-10 px-4 py-10 lg:px-25 lg:py-0 opacity-0"
+        id="simulation"
+      ></div>
+      <div className="flex-grow pt-0 pb-10 px-4 lg:px-25 bg-white">
+        <h2
+          className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
+          id="simulation"
+        >
           お試しシミュレーション
         </h2>
 
@@ -102,39 +111,38 @@ export default function Home() {
             </div>
           </Link>
         </div>
-        </div>
-        <div className="bg-sky-700">
-          <div className="px-4 mx-2 my-8 py-5 bg-sky-100 rounded-md lg:mx-20 shadow-2xl opacity-90">
+      </div>
+      <div className="">
+        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-95">
+          <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            地球惑星科学専攻でのシミュレーション研究を知る
+          </h2>
 
-        <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
-          地球惑星科学専攻でのシミュレーション研究を知る
-        </h2>
+          <p className="mb-2 py-3">
+            地球・惑星科学のなかでも、シミュレーションを用いた研究は多岐にわたります。研究内容を一般向けに紹介している「
+            <Link href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">
+              プレスリリース
+            </Link>
+            」を読んでみましょう（地球惑星科学専攻HPに飛びます）。
+          </p>
+          <div className="pb-5">
+            <Link
+              href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+              調べる <ChevronRight className="inline ml-2" />
+            </Link>
+          </div>
 
-        <p className="mb-2 py-3">
-          地球・惑星科学のなかでも、シミュレーションを用いた研究は多岐にわたります。研究内容を一般向けに紹介している「
-          <Link href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">
-            プレスリリース
-          </Link>
-          」を読んでみましょう（地球惑星科学専攻HPに飛びます）。
-        </p>
-        <div className="pb-5">
-
-        <Link
-          href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
-          className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
-        >
-          調べる <ChevronRight className="inline ml-2" />
-        </Link>
-
-        </div>
-
-        <h2 className="text-xl py-3 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">お知らせ</h2>
-        <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
-        <p className="mb-2">
-          五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
-          98 回五月祭 HP
-          の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
-        </p>
+          <h2 className="text-xl py-3 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            お知らせ
+          </h2>
+          <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
+          <p className="mb-2">
+            五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
+            98 回五月祭 HP
+            の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
+          </p>
         </div>
       </div>
       <Footer />
