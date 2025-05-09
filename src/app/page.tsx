@@ -23,7 +23,7 @@ export default function Home() {
         />
       </div>
       <div className="">
-        <div className="flex-grow pt-30 pb-10 px-6 lg:px-25 lg:pt-75">
+        <div className="flex-grow pt-30 pb-10 px-1 lg:px-25 lg:pt-75 lg:px-4">
           {/* 画像を右寄せするために flex を追加 */}
           <div className="flex justify-end py-3"></div>
 
