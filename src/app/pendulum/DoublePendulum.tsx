@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Link from "next/link";
 
 const DoublePendulum: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -24,7 +30,7 @@ const DoublePendulum: React.FC = () => {
     l2Ref.current,
   ]);
 
-  const init_theta = 1.2 * Math.PI / 2
+  const init_theta = (1.2 * Math.PI) / 2;
 
   const θ1Ref = useRef(init_theta);
   const θ2Ref = useRef(init_theta);
@@ -42,9 +48,9 @@ const DoublePendulum: React.FC = () => {
 
     const resizeCanvas = () => {
       if (window.innerWidth < 800) {
-        canvas.width = window.innerWidth - 30;
+        canvas.width = window.innerWidth - 50;
       } else {
-        canvas.width = 770;
+        canvas.width = 750;
       }
       canvas.height = window.innerHeight * 0.6;
     };
@@ -98,7 +104,7 @@ const DoublePendulum: React.FC = () => {
 
       const rk4 = () => {
         if (resetRef.current) {
-          θ1Ref.current = init_theta
+          θ1Ref.current = init_theta;
           θ2Ref.current = init_theta;
           ω1Ref.current = 0;
           ω2Ref.current = 0;
@@ -276,17 +282,23 @@ const DoublePendulum: React.FC = () => {
   };
 
   const handleNumber = () => {
-    if (numberRef.current === 0) {
+    if (numberRef.current === 1) {
       // 物理量とレンダリングする量を分けて代入する
-      numberRef.current = 1;
+      numberRef.current = 2;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
       l1Ref.current = 0.25;
       l2Ref.current = 0.5;
-    } else if (numberRef.current === 1) {
+    } else if (numberRef.current === 2) {
       numberRef.current = 0;
       m1Ref.current = 2;
       m2Ref.current = 0.5;
+      l1Ref.current = 0.5;
+      l2Ref.current = 0.25;
+    } else if (numberRef.current === 0) {
+      numberRef.current = 1;
+      m1Ref.current = 0.5;
+      m2Ref.current = 2.0;
       l1Ref.current = 0.5;
       l2Ref.current = 0.25;
     }
@@ -333,7 +345,70 @@ const DoublePendulum: React.FC = () => {
           おもりの質量: {array[1]} kg, {array[2]} kg
         </div>
       </div>
-      <canvas ref={canvasRef} />
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          overflow: "hidden", // コンテンツがはみ出さないようにする
+        }}
+      >
+        <canvas ref={canvasRef} />
+        <div className="px-2 py-4 max-w-3xl">
+          <Accordion
+            sx={{
+              backgroundColor: "#e0f2f1", // 背景色
+              color: "#263238", // テキスト色
+              "&.Mui-expanded": {
+                backgroundColor: "#e0f2f1", // 展開時の背景色（オプション）
+              },
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ArrowDownwardIcon sx={{ color: "#1a237e" }} />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <Typography component="span" sx={{ fontWeight: 700 }}>ひとことメモ</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <p className="py-1">
+                見ての通り、振り子を二つ繋げたものを動かしている様子を再現しています。
+              </p>
+              <p className="py-2">
+                普通の振り子（単振り子）は単純な往復運動をしますが、おもりが一つ増えるだけで、運動が複雑になります。
+              </p>
+              <p className="py-2">
+                五月祭当日は、振り子の長さやおもりの質量を皆さんが「いじれる」シミュレーションを展示してますので、ぜひご来場いただき、いろいろ試してみてください！
+              </p>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "#e0f2f1", // 背景色
+              color: "#263238", // テキスト色
+              "&.Mui-expanded": {
+                backgroundColor: "#e0f2f1", // 展開時の背景色（オプション）
+              },
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ArrowDownwardIcon sx={{ color: "#1a237e" }} />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <Typography component="span" sx={{ fontWeight: 700 }}>キーワード・参考文献</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <ul>
+                <li className="py-1">カオス理論：二重振り子では、初期条件のわずかな違いが運動に大きな影響を与えることがあります。これがカオス的な振る舞いの一例です。NHKの<Link href="https://www.nhk.jp/p/ts/Y5R676NK92/blog/bl/pmg0p5PX8L/bp/pPZlrkyg6v/" className="text-sky-700 font-bold">「笑わない数学」</Link>のブログが結構わかりやすそう（2025年5月11日閲覧）。</li>
+                <li className="py-1">今回参照した基礎方程式：Troy Shinbrot, Celso Grebogi, Jack Wisdom & James A. Yorke, “Chaos in a Double Pendulum,” Am. J. Phys., 60, 6, pp. 491-499, June 1992.</li>
+              </ul>
+            </AccordionDetails>
+          </Accordion>
+          
+          
+        </div>
+      </div>
     </>
   );
 };

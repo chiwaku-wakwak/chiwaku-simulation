@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
         <div className="space-box">
           <h3 className="text-lg font-bold mb-2 lg:mb-0">
-            2025年 東京大学 理学部 地球惑星物理・環境学科有志
+            2025年度 東京大学 理学部 地球惑星物理・環境学科有志
           </h3>
         </div>
         <p className="mb-2 md:mb-0">

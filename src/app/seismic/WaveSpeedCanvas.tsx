@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Image from "next/image";
 
 type Ray = {
   x: number;
@@ -103,7 +109,7 @@ const WaveSpeedCanvas: React.FC = () => {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
   const [origin, setOrigin] = useState({ x: 2, y: -2 });
-  const [locked, setLocked] = useState(false);
+  const [, setLocked] = useState(false);
   const [started, setStarted] = useState(false);
   const [number, setNumber] = useState(0);
 
@@ -261,20 +267,6 @@ const WaveSpeedCanvas: React.FC = () => {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
-  const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (locked) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const px = e.clientX - rect.left;
-    const py = e.clientY - rect.top;
-    const { x, y } = screenToPhysical(
-      px,
-      py,
-      canvasSize.width,
-      canvasSize.height
-    );
-    setOrigin({ x, y });
-  };
-
   const handleStart = () => {
     setLocked(true);
     if (!started) {
@@ -300,14 +292,22 @@ const WaveSpeedCanvas: React.FC = () => {
     <div ref={containerRef} style={{ width: "100%", position: "relative" }}>
       <div className="button_container">
         {running === false && started === false && (
-          <button className="function" onClick={handleStart}>開始</button>
+          <button className="function" onClick={handleStart}>
+            開始
+          </button>
         )}
         {running === false && started === true && (
-          <button className="function" onClick={handleStart}>再開</button>
+          <button className="function" onClick={handleStart}>
+            再開
+          </button>
         )}
-        {running === true && <button className="function" onClick={handleStop}>停止</button>}
+        {running === true && (
+          <button className="function" onClick={handleStop}>
+            停止
+          </button>
+        )}
         <button
-          className="function" 
+          className="function"
           onClick={() => {
             setOrigin({ x: origin.x, y: origin.y });
             setRays([]);
@@ -320,7 +320,7 @@ const WaveSpeedCanvas: React.FC = () => {
           リセット
         </button>
         <button
-          className="function" 
+          className="function"
           onClick={() => {
             if (number === 0) {
               setNumber(1);
@@ -344,18 +344,34 @@ const WaveSpeedCanvas: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="wave_speed">
+      <div
+        className="relative wave_speed"
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "850px",
+          marginBottom: "10px",
+          aspectRatio: "2 / 1", // 幅 : 高さ = 2 : 1
+          overflow: "hidden", // コンテンツがはみ出さないようにする
+        }}
+      >
         <canvas
           ref={bgCanvasRef}
           width={canvasSize.width}
-          height={canvasSize.height}
-          style={{ position: "absolute", top: 0, left: 0, zIndex: 0 }}
-          onClick={handleClick}
+          height={canvasSize.width / 2}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 0,
+          }}
         />
+
+        {/* 前景キャンバス */}
         <canvas
           ref={fgCanvasRef}
           width={canvasSize.width}
-          height={canvasSize.height}
+          height={canvasSize.width / 2}
           style={{
             position: "absolute",
             top: 0,
@@ -365,6 +381,68 @@ const WaveSpeedCanvas: React.FC = () => {
           }}
         />
       </div>
+      <div className="max-w-4xl py-2">
+      <Accordion
+          sx={{
+            backgroundColor: "#e0f2f1", // 背景色
+            color: "#263238", // テキスト色
+            "&.Mui-expanded": {
+              backgroundColor: "#e0f2f1", // 展開時の背景色（オプション）
+            },
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ArrowDownwardIcon sx={{ color: "#1a237e" }} />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography component="span" sx={{ fontWeight: 700 }}>
+              ひとことメモ
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <p className="py-1">
+              地下の震源から発生した地震波が広がる様子を再現しています。地中は均一な物質でできているとは限らないので、場合によって複雑な伝わり方をします。
+            </p>
+            <p className="py-2">
+              地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、さまざまな地下構造で波の伝わり方をシミュレートできます（開発中の画面です）。
+            </p>
+            <Image
+              src="/simulation_photo.png"
+              alt="シミュレーション班の写真"
+              width={450}
+              height={350}
+              className="rounded-md mb-2 object-contain"
+            />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          sx={{
+            backgroundColor: "#e0f2f1", // 背景色
+            color: "#263238", // テキスト色
+            "&.Mui-expanded": {
+              backgroundColor: "#e0f2f1", // 展開時の背景色（オプション）
+            },
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ArrowDownwardIcon sx={{ color: "#1a237e" }} />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography component="span" sx={{ fontWeight: 700 }}>
+              キーワード・参考文献
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <ul>
+              <li className="py-1">
+                シミュレーションの構築には、金森博雄『地震の物理』（岩波書店、1991）を参考にしています。
+              </li>
+            </ul>
+          </AccordionDetails>
+        </Accordion>
+        </div>
     </div>
   );
 };

@@ -42,7 +42,7 @@ export default function Home() {
             </h1>
 
             <p className="text-white py-1">
-              21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の予測などで大いに活用されています。
+              21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の理解などで大いに活用されています。
             </p>
             <p className="text-white py-4">
               その一端をみなさんにも体感していただくため、身近で直感的なテーマを中心に、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
@@ -68,11 +68,22 @@ export default function Home() {
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
           id="simulation"
         >
+          注意点
+        </h2>
+
+        <p className="mb-2 pt-3">
+          ⚠️
+          工事中：シミュレーション統括が許可を出すまでこのurlを一般公開しないこと.
+        </p>
+        <h2
+          className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
+          id="simulation"
+        >
           お試しシミュレーション
         </h2>
 
         <p className="mb-2 py-3">
-          シミュレーションのイメージを掴んでいただくために、実際の企画で展示するシミュレーションの簡易版をここに置きます。
+          シミュレーションのイメージを掴んでいただくために、実際の企画で展示するシミュレーションの簡易版をここに置きます（重力レンズシミュレーションは紹介文のみ）。
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 items-stretch md:grid-cols-3 gap-4 items-stretch">
@@ -113,10 +124,55 @@ export default function Home() {
               </p>
             </div>
           </Link>
+
+          <Link href="/gravitational-lens" className="h-full">
+            <div className="border-[0.5px] border-[#6a75e1] h-full flex flex-col rounded-xl p-4 shadow-sm hover:bg-gray-50 transition">
+              <Image
+                src="/no_image.jpg"
+                alt="重力レンズシミュレーション"
+                width={500}
+                height={400}
+                className="rounded-xl mb-2 object-cover h-48"
+              />
+              <hr className="border-t border-gray-300 mb-2" />
+              <h3 className="text-lg font-semibold mt-auto">
+                重力レンズシミュレーション
+              </h3>
+              <p className="text-sm text-gray-600">
+                一般相対性理論によって説明される重力レンズ効果が「系外惑星探査」に応用できることを、シミュレーションを用いて再現します。
+              </p>
+            </div>
+          </Link>
         </div>
+        <h2 className="text-xl py-5 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+          お知らせ
+        </h2>
+        <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
+        <p className="mb-2">
+          五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
+          98 回五月祭 HP
+          の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
+        </p>
       </div>
       <div className="">
         <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-90">
+          <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            地球惑星物理・環境学科でのコンピュータ教育を知る
+          </h2>
+
+          <p className="mb-2 py-3">
+            地球惑星物理・環境学科では、コンピュータを用いたシミュレーション研究を行うための基礎的な教育が行われています。学生の実感も含めてご紹介します。
+          </p>
+
+          <div className="pb-3">
+          <Link
+            href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+            className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+          >
+            読む <ChevronRight className="inline ml-2" />
+          </Link>
+          </div>
+
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
             地球惑星科学専攻でのシミュレーション研究を知る
           </h2>
@@ -128,7 +184,7 @@ export default function Home() {
             </Link>
             」を読んでみましょう（地球惑星科学専攻HPに飛びます）。
           </p>
-          <div className="pb-5">
+          <div className="pb-3">
             <Link
               href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
               className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
@@ -136,16 +192,6 @@ export default function Home() {
               調べる <ChevronRight className="inline ml-2" />
             </Link>
           </div>
-
-          <h2 className="text-xl py-3 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
-            お知らせ
-          </h2>
-          <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
-          <p className="mb-2">
-            五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
-            98 回五月祭 HP
-            の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
-          </p>
         </div>
       </div>
       <Footer />
