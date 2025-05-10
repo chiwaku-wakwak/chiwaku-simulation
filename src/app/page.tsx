@@ -15,19 +15,22 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
-        <Image
-          src="/background.jpg"
-          alt="シミュレーション班の写真"
-          fill
-          className="object-cover min-w-full min-h-full opacity-90"
-        />
+        <div className="object-cover min-w-full min-h-full bg-sky-700" />
       </div>
       <div className="">
-        <div className="flex-grow pt-30 pb-10 px-1 lg:px-25 lg:pt-75 lg:px-4">
+        <div className="flex-grow pt-30 pb-10 px-1 lg:px-25 lg:pt-22 lg:px-4">
           {/* 画像を右寄せするために flex を追加 */}
-          <div className="flex justify-end py-3"></div>
+          <div className="flex justify-end py-3">
+            <Image
+              src="/simulation_photo.png"
+              alt="シミュレーション班の写真"
+              width={450}
+              height={350}
+              className="rounded-md mb-2 object-contain"
+            />
+          </div>
 
-          <div className="inline-block opacity-92 bg-sky-800 px-6 py-8 rounded-md lg:w-2/3">
+          <div className="inline-block opacity-92 bg-sky-700 px-4 py-8 rounded-md lg:w-2/3">
             <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
               地球と惑星の「謎」を
             </h1>
@@ -113,7 +116,7 @@ export default function Home() {
         </div>
       </div>
       <div className="">
-        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-95">
+        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-90">
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
             地球惑星科学専攻でのシミュレーション研究を知る
           </h2>
