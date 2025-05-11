@@ -26,7 +26,7 @@ export default function Home() {
               alt="シミュレーション班の写真"
               width={450}
               height={350}
-              className="rounded-md mb-2 object-contain"
+              className="rounded-md mb-2 mx-3 object-contain"
             />
           </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="flex-grow pt-0 pb-10 px-4 py-10 lg:px-25 lg:py-0 opacity-0"
+        className="flex-grow pt-0 pb-5 px-4 lg:px-25 lg:py-0 opacity-0"
         id="simulation"
       ></div>
       <div className="flex-grow pt-0 pb-10 px-4 lg:px-25 bg-white">
@@ -155,7 +155,7 @@ export default function Home() {
         </p>
       </div>
       <div className="">
-        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-90">
+        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-80">
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
             地球惑星物理・環境学科でのコンピュータ教育を知る
           </h2>

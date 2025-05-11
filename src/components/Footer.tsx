@@ -23,6 +23,11 @@ export default function Footer() {
           <Link href="/seismic" className="hover:underline">
             地震波
           </Link>
+          <Link
+            href="/gravitational-lens"
+          >
+            重力レンズ
+          </Link>
           <a
             href="https://github.com/random776/seismic_tsx"
             target="_blank"

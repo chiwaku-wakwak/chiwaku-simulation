@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* ハンバーガー */}
-        <div className="md:hidden bg-white">
+        <div className="lg:hidden bg-white">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-3xl focus:outline-none text-gray-700"
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* ナビゲーション（PC） */}
-        <nav className="hidden md:flex space-x-6 text-gray-700 text-sm">
+        <nav className="hidden lg:flex space-x-6 text-gray-700 text-sm">
           <Link href="/" className={isActive("/")}>
             ホーム
           </Link>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
 
       {/* ナビゲーション（モバイル） */}
       {isOpen && (
-        <div className="md:hidden px-4 py-6 pb-3 bg-white">
+        <div className="lg:hidden px-4 py-6 pb-3 bg-white">
           <nav className="flex flex-col space-y-2 text-gray-700 text-sm">
             <Link
               href="/"
