@@ -104,12 +104,11 @@ const WaveSpeedCanvas: React.FC = () => {
   const bgCanvasRef = useRef<HTMLCanvasElement>(null);
   const fgCanvasRef = useRef<HTMLCanvasElement>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 800, height: 400 });
-
   const [rays, setRays] = useState<Ray[]>([]);
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
   const [origin, setOrigin] = useState({ x: 2, y: -2 });
-  const [, setLocked] = useState(false);
+  const [locked, setLocked] = useState(false);
   const [started, setStarted] = useState(false);
   const [number, setNumber] = useState(0);
 
@@ -267,6 +266,27 @@ const WaveSpeedCanvas: React.FC = () => {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
+  const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (locked) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const px = e.clientX - rect.left;
+
+    const py = e.clientY - rect.top;
+
+    const { x, y } = screenToPhysical(
+      px,
+
+      py,
+
+      canvasSize.width,
+
+      canvasSize.height
+    );
+
+    setOrigin({ x, y });
+  };
   const handleStart = () => {
     setLocked(true);
     if (!started) {
@@ -359,6 +379,7 @@ const WaveSpeedCanvas: React.FC = () => {
           ref={bgCanvasRef}
           width={canvasSize.width}
           height={canvasSize.width / 2}
+          onClick={handleClick}
           style={{
             position: "absolute",
             top: 0,
@@ -382,7 +403,7 @@ const WaveSpeedCanvas: React.FC = () => {
         />
       </div>
       <div className="max-w-4xl py-2">
-      <Accordion
+        <Accordion
           sx={{
             backgroundColor: "#e0f2f1", // 背景色
             color: "#263238", // テキスト色
@@ -442,7 +463,7 @@ const WaveSpeedCanvas: React.FC = () => {
             </ul>
           </AccordionDetails>
         </Accordion>
-        </div>
+      </div>
     </div>
   );
 };
