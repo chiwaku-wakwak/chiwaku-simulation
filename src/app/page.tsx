@@ -20,17 +20,17 @@ export default function Home() {
       <div className="">
         <div className="flex-grow pt-30 pb-10 px-1 lg:px-25 lg:pt-22 lg:px-4">
           {/* 画像を右寄せするために flex を追加 */}
-          <div className="flex justify-end py-3">
+          <div className="flex justify-end py-3 px-2">
             <Image
               src="/simulation_photo.png"
               alt="シミュレーション班の写真"
               width={450}
               height={350}
-              className="rounded-md mb-2 mx-3 object-contain"
+              className="rounded-md mb-2 object-contain"
             />
           </div>
 
-          <div className="inline-block opacity-92 bg-sky-700 px-4 py-8 rounded-md lg:w-2/3">
+          <div className="inline-block opacity-92 bg-sky-700 px-1 py-8 rounded-md lg:w-2/3">
             <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
               地球と惑星の「謎」を
             </h1>
