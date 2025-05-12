@@ -15,36 +15,35 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
-        <div className="object-cover min-w-full min-h-full bg-sky-700" />
+        <Image
+          src="/kelvin-helmholtz.jpg"
+          alt="シミュレーション班の写真"
+          fill
+          className="object-cover min-w-full min-h-full opacity-90"
+        />
       </div>
       <div className="">
         <div className="flex-grow pt-30 pb-10 px-1 lg:px-25 lg:pt-22 lg:px-4">
           {/* 画像を右寄せするために flex を追加 */}
-          <div className="flex justify-end py-3 px-2">
-            <Image
-              src="/simulation_photo.png"
-              alt="シミュレーション班の写真"
-              width={450}
-              height={350}
-              className="rounded-md mb-2 object-contain"
-            />
-          </div>
+          <div className="flex justify-end lg:py-35 px-2"></div>
 
-          <div className="inline-block opacity-92 bg-sky-700 px-1 py-8 rounded-md lg:w-2/3">
-            <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
+          <div className="inline-block bg-sky-700/80 px-1 py-8 rounded-md lg:w-2/3 lg:px-5">
+            <h1 className="text-3xl font-bold mb-4 text-white opacity-100 lg:text-5xl">
               地球と惑星の「謎」を
             </h1>
-            <h1 className="text-2xl font-bold mb-4 text-white lg:text-4xl">
-              <span className="text-4xl font-bold mb-4 text-cyan-300 lg:!text-6xl">
+            <h1 className="text-3xl font-bold mb-2 text-white opacity-100 lg:text-5xl">
+              <span className="text-5xl font-bold mb-2 text-cyan-300 lg:!text-7xl">
                 仮想現実
               </span>
               で解き明かせ。
             </h1>
 
-            <p className="text-white py-1">
+            <div className="flex justify-end py-10 lg:py-0 px-2"></div>
+
+            <p className="text-white opacity-100 py-1">
               21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の理解などで大いに活用されています。
             </p>
-            <p className="text-white py-4">
+            <p className="text-white opacity-100 py-4">
               その一端をみなさんにも体感していただくため、身近で直感的なテーマを中心に、今回展示するシミュレーションの計画・立案・作成を数ヶ月前から行いました。楽しんでいただければ大変嬉しいです。
             </p>
             <Scroll
@@ -155,7 +154,7 @@ export default function Home() {
         </p>
       </div>
       <div className="">
-        <div className="px-4 mx-2 my-8 py-5 bg-white rounded-md lg:mx-20 shadow-2xl opacity-80">
+        <div className="px-4 mx-2 my-8 py-5 bg-white/95 rounded-md lg:mx-20 shadow-2xl">
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
             地球惑星物理・環境学科でのコンピュータ教育を知る
           </h2>
@@ -165,12 +164,12 @@ export default function Home() {
           </p>
 
           <div className="pb-3">
-          <Link
-            href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
-            className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
-          >
-            読む <ChevronRight className="inline ml-2" />
-          </Link>
+            <Link
+              href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+              読む <ChevronRight className="inline ml-2" />
+            </Link>
           </div>
 
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
