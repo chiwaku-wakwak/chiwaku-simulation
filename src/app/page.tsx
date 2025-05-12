@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen text-left">
+    <div className="flex flex-col min-h-screen">
       <Header />
       <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
         <div className="object-cover min-w-full min-h-full bg-sky-700" />
