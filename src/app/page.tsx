@@ -28,11 +28,11 @@ export default function Home() {
           <div className="flex justify-end lg:py-35 px-2"></div>
 
           <div className="inline-block bg-sky-700/80 px-1 py-8 rounded-md lg:w-2/3 lg:px-5">
-            <h1 className="text-3xl font-bold mb-4 text-white opacity-100 lg:text-5xl">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white opacity-100 xl:text-5xl">
               地球と惑星の「謎」を
             </h1>
-            <h1 className="text-3xl font-bold mb-2 text-white opacity-100 lg:text-5xl">
-              <span className="text-5xl font-bold mb-2 text-cyan-300 lg:!text-7xl">
+            <h1 className="text-2xl md:text-3xl font-bold mb-2 text-white opacity-100 xl:text-5xl">
+              <span className="text-4xl md:text-5xl font-bold mb-2 text-cyan-300 xl:!text-7xl">
                 仮想現実
               </span>
               で解き明かせ。
