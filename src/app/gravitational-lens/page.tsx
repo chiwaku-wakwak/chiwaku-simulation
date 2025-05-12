@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <>
       <Header />
       {/* pt-20 = padding-top: 5rem (＝約80px。Header 高さに応じて調整) */}
-      <main className="pt-25 px-4 lg:px-25">
+      <main className="pt-20 px-4 lg:px-20 text-left">
         <h1
           className="text-2xl font-bold text-gray-800 text-left border-b-2 border-green-500 pb-0 inline-block"
           id="simulation"
