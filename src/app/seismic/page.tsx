@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="pt-20 px-4 lg:px-20 text-left">
+      <main className="pt-23 px-4 lg:px-20 text-left">
       <h1
           className="text-2xl font-bold text-gray-800 text-left border-b-2 border-green-500 pb-0 inline-block"
           id="simulation"

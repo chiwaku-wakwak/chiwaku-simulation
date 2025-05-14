@@ -38,8 +38,6 @@ export default function Home() {
               で解き明かせ。
             </h1>
 
-            <div className="flex justify-end py-10 lg:py-0 px-2"></div>
-
             <p className="text-white opacity-100 py-1">
               21世紀の理学・工学分野で、なくてはならない手法になっている「数値シミュレーション」。地球・惑星科学においても、気象予報や太陽活動の理解などで大いに活用されています。
             </p>
@@ -56,6 +54,7 @@ export default function Home() {
               はじめる <ChevronDown className="inline ml-2" />
             </Scroll>
           </div>
+          <div className="flex justify-end py-10 lg:py-0 px-2"></div>
         </div>
       </div>
       <div
@@ -156,16 +155,16 @@ export default function Home() {
       <div className="">
         <div className="px-4 mx-2 my-8 py-5 bg-white/95 rounded-md lg:mx-20 shadow-2xl">
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
-            地球惑星物理・環境学科でのコンピュータ教育を知る
+            地球惑星物理・環境学科での「パソコン」授業
           </h2>
 
           <p className="mb-2 py-3">
-            地球惑星物理・環境学科では、コンピュータを用いたシミュレーション研究を行うための基礎的な教育が行われています。学生の実感も含めてご紹介します。
+            地球惑星物理・環境学科では、シミュレーションやデータ解析など、パソコンを「かたかた」させる授業があります。学生の実感とともに紹介します。
           </p>
 
           <div className="pb-3">
             <Link
-              href="https://www.eps.s.u-tokyo.ac.jp/?s=%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+              href="/about"
               className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
             >
               読む <ChevronRight className="inline ml-2" />
