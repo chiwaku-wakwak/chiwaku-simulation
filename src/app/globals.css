@@ -43,10 +43,6 @@ canvas {
   z-index: 0; /* canvas が他の要素の下に表示される */
 }
 
-li {
-  list-style-type: disc;
-}
-
 ul {
   list-style-type: disc !important;
   padding: 15px;

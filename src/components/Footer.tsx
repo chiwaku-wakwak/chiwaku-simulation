@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-600 text-sm py-6 border-t">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col xl:flex-row justify-between items-center">
         <div className="space-box">
-          <h3 className="text-lg font-bold mb-2 lg:mb-0">
+          <h3 className="text-lg font-bold mb-2 xl:mb-0">
             2025年度 東京大学 理学部 地球惑星物理・環境学科有志
           </h3>
         </div>
-        <p className="mb-2 md:mb-0">
-          &copy; {new Date().getFullYear()} 五月祭地球惑星系：シミュレーション班
+        <p className="mb-2 xl:mb-0">
+          &copy; {new Date().getFullYear()} 五月祭地球惑星系2学科：シミュレーション班
         </p>
         <div className="flex space-x-4">
         <Link href="/" className="hover:underline">

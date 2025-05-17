@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "2025五月祭-地惑わくわく：シミュレーション班",
+  title: "「地惑、わくわく。」2025：シミュレーション班",
   description: "こんにちは。理学部地球惑星物理・環境学科シミュレーション班です。理学部1号館105教室でシミュレーションを展示します。",
 };
 

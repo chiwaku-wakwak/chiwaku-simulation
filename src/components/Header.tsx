@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +19,24 @@ const Header: React.FC = () => {
         {/* ロゴとタイトル */}
         <div className="flex items-center space-x-3">
           <span className="no-underline">
-            <Link href="/">
-              <span className="text-lg md:text-xl font-semibold text-gray-700">
-                2025五月祭・地惑わくわく：シミュレーション班
-              </span>
+            <Link href="/" className="flex items-center space-x-3 no-underline">
+              {/* ロゴ画像 */}
+              <Image
+                src="/chiwaku.png" // ロゴのパスに置き換えてください
+                alt="ロゴ"
+                width={60} // お好みで調整
+                height={60}
+                className="h-14 w-auto lg:h-16"
+              />
+              {/* タイトルテキスト */}
+              <div className="flex flex-col leading-tight">
+                <p className="text-lg md:text-xl font-semibold text-gray-700 lg:text-xl">
+                  地惑、わくわく。2025
+                </p>
+                <p className="text-lg md:text-xl font-semibold text-gray-700 lg:text-xl">
+                  シミュレーション班
+                </p>
+              </div>
             </Link>
           </span>
         </div>

@@ -66,22 +66,37 @@ export default function Home() {
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
           id="simulation"
         >
-          注意点
+          このサイトについて
         </h2>
 
         <p className="mb-2 pt-3">
-          ⚠️
-          工事中：シミュレーション統括が許可を出すまでこのurlを一般公開しないこと.
+          私たちは、理学部地球惑星系2学科の「
+          <span className="font-bold">シミュレーション班</span>
+          」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！
+        </p>
+        <p className="mb-2 pt-3">
+          なお、
+          <span className="font-bold">
+            「地惑、わくわく。」2025企画全体のWebサイト
+          </span>
+          は
+          <Link
+            href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
+            className="font-bold text-blue-700 hover:underline"
+          >
+            こちら
+          </Link>
+          です（当班のサイトのみ別のシステムが必要であるため、このように特設サイトを設置しております）。
         </p>
         <h2
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
           id="simulation"
         >
-          お試しシミュレーション
+          お試しシミュレーション・紹介記事
         </h2>
 
         <p className="mb-2 py-3">
-          シミュレーションのイメージを掴んでいただくために、実際の企画で展示するシミュレーションの簡易版をここに置きます（重力レンズシミュレーションは紹介文のみ）。
+          シミュレーションのイメージを掴んでいただくために、実際の企画で展示する「二重振り子」「地震波伝播」シミュレーションの簡易版の簡易版をおきます。また、「重力マイクロレンズ」シミュレーションの紹介記事もおきます。ぜひご覧ください。
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 items-stretch md:grid-cols-3 gap-4 items-stretch">
@@ -126,7 +141,7 @@ export default function Home() {
           <Link href="/gravitational-lens" className="h-full">
             <div className="border-[0.5px] border-[#6a75e1] h-full flex flex-col rounded-xl p-4 shadow-sm hover:bg-gray-50 transition">
               <Image
-                src="/no_image.jpg"
+                src="/microlens_3.png"
                 alt="重力レンズシミュレーション"
                 width={500}
                 height={400}
@@ -134,10 +149,10 @@ export default function Home() {
               />
               <hr className="border-t border-gray-300 mb-2" />
               <h3 className="text-lg font-semibold mt-auto">
-                重力レンズシミュレーション
+                重力マイクロレンズシミュレーション
               </h3>
               <p className="text-sm text-gray-600">
-                一般相対性理論によって説明される重力レンズ効果が「系外惑星探査」に応用できることを、シミュレーションを用いて再現します。
+                一般相対論と、系外惑星探査と、何が関係あるの？
               </p>
             </div>
           </Link>
@@ -147,13 +162,32 @@ export default function Home() {
         </h2>
         <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
         <p className="mb-2">
-          五月祭では、来場者の投票と評価を総合的に判断して人気企画を決定する「五月祭総選挙」を実施しています。投票は、第
-          98 回五月祭 HP
-          の企画詳細ページの「企画紹介」欄から行うことができます。本企画への投票をよろしくお願いいたします！
+          皆さんのご支援が私たちの励みとなり、来年以降の展示拡充にも繋がります。
+          　本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
+        </p>
+        <p className="mb-2">
+          こちらのQRコードまたはこちらのリンク（今はダミーです！！！）
+          から投票をよろしくお願いします！
         </p>
       </div>
       <div className="">
         <div className="px-4 mx-2 my-8 py-5 bg-white/95 rounded-md lg:mx-20 shadow-2xl">
+          <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            ところでこのWebサイトの背景画像は？
+          </h2>
+
+          <p className="mb-2 py-3">
+            この画像は、このサイトの編者T（地球惑星物理学科4年）が個人で行なった「ケルヴィン・ヘルムホルツ不安定性」の数値シミュレーションの結果画像（一部色彩調整）です。個別に紹介記事を書いているのでぜひお読みください。
+          </p>
+
+          <div className="pb-3">
+            <Link
+              href="/kh-instability"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+              読む <ChevronRight className="inline ml-2" />
+            </Link>
+          </div>
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
             地球惑星物理・環境学科での「パソコン」授業
           </h2>
