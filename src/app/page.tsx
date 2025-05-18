@@ -74,7 +74,7 @@ export default function Home() {
           <span className="font-bold">シミュレーション班</span>
           」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！
         </p>
-        <p className="mb-2 pt-3">
+        <p className="mb-2 pt-1">
           なお、
           <span className="font-bold">
             「地惑、わくわく。」2025企画全体のWebサイト
@@ -96,7 +96,7 @@ export default function Home() {
         </h2>
 
         <p className="mb-2 py-3">
-          シミュレーションのイメージを掴んでいただくために、実際の企画で展示する「二重振り子」「地震波伝播」シミュレーションの簡易版の簡易版をおきます。また、「重力マイクロレンズ」シミュレーションの紹介記事もおきます。ぜひご覧ください。
+          シミュレーションのイメージを掴んでいただくために、実際の企画で展示する「二重振り子」「地震波伝播」シミュレーションの簡易版をおきます。また、「重力マイクロレンズ」シミュレーションの紹介記事もおきます。ぜひご覧ください。
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 items-stretch md:grid-cols-3 gap-4 items-stretch">
@@ -163,7 +163,7 @@ export default function Home() {
         <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
         <p className="mb-2">
           皆さんのご支援が私たちの励みとなり、来年以降の展示拡充にも繋がります。
-          　本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
+          本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
         </p>
         <p className="mb-2">
           こちらのQRコードまたはこちらのリンク（今はダミーです！！！）

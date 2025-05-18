@@ -7,6 +7,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Link from "next/link";
+import Image from "next/image";
 
 const DoublePendulum: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -380,6 +381,13 @@ const DoublePendulum: React.FC = () => {
               <p className="py-2">
                 五月祭当日は、振り子の長さやおもりの質量を皆さんが「いじれる」シミュレーションを展示してますので、ぜひご来場いただき、いろいろ試してみてください！
               </p>
+              <Image
+              src="/pendulum_tenji.jpg"
+              alt="シミュレーション班の写真"
+              width={450}
+              height={450}
+              className="rounded-md mb-2 object-contain"
+            />
             </AccordionDetails>
           </Accordion>
           <Accordion
