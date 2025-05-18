@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Head from 'next/head';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "「地惑、わくわく。」2025：シミュレーション班",
-  description: "こんにちは。理学部地球惑星物理・環境学科シミュレーション班です。理学部1号館105教室でシミュレーションを展示します。",
+  description:
+    "こんにちは。理学部地球惑星物理・環境学科シミュレーション班です。理学部1号館105教室でシミュレーションを展示します。",
+  verification: {
+    google: "3JinIgk3G3gjw9hWk90ReWaJhCl1ledsb7jzFV5Qwo0",
+  },
 };
 
 export default function RootLayout({
@@ -25,10 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* ✅ ここに追記 */}
-        <meta name="google-site-verification" content="3JinIgk3G3gjw9hWk90ReWaJhCl1ledsb7jzFV5Qwo0" />
-      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -37,3 +36,4 @@ export default function RootLayout({
     </html>
   );
 }
+
