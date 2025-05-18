@@ -169,15 +169,45 @@ const App: React.FC = () => {
             付録：実際に作成したプログラム
           </h2>
           <p className="text-gray-700 mb-4">
-            ここでは、実際に作成したプログラムを紹介します。Jupyter
-            Notebook環境で実行しました。環境によってはもしかしたら動かないかもしれないので、ご了承ください。
+            ここでは、実際に作成したプログラムを紹介します。PythonのJupyter
+            Notebookのローカル環境で実行しました。環境によってはもしかしたら動かないかもしれないので、ご了承ください<Footnote number={3}>
+              Google Colaboratoryでも実行したのですが、微妙に変な挙動をします（結果の出力はされるのですが...）
+            </Footnote>。
           </p>
-            <p className="text-gray-700 mb-4">
-                ところで、手軽にPythonを始めたい人は、<Link href="https://colab.research.google.com/" className="text-blue-500 hover:underline">Google Colaboratory</Link>を使うと良いです。Googleが提供しているJupyter Notebook環境で、Pythonのコードを簡単に実行できます。Google アカウントがあれば、すぐに使えます。Google Colaboratoryでの下記コードの実行可能性は確認しました。
-            </p>
-          <pre className="bg-gray-100 text-gray-700 p-4 rounded overflow-x-auto mb-4 text-sm">
-            <code>
-              {`import numpy as np
+          <p className="text-gray-700 mb-4">
+            ところで、手軽にPythonを始めたい人は、
+            <Link
+              href="https://colab.research.google.com/"
+              className="text-blue-500 hover:underline"
+            >
+              Google Colaboratory
+            </Link>
+            を使うと良いです。Googleが提供しているJupyter
+            Notebook環境で、Pythonのコードを簡単に実行できます。Google
+            アカウントがあれば、すぐに使えます。
+          </p>
+          <Accordion
+            sx={{
+              backgroundColor: "#c0f2f1", // 背景色
+              color: "#263238", // テキスト色
+              "&.Mui-expanded": {
+                backgroundColor: "#c0f2f1", // 展開時の背景色（オプション）
+              },
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ArrowDownwardIcon sx={{ color: "#1a237e" }} />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <Typography component="span" sx={{ fontWeight: 700 }}>
+                プログラムのソースコード
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <pre className="bg-gray-100 text-gray-700 p-4 rounded overflow-x-auto mb-4 text-sm">
+                <code>
+                  {`import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation, rc
 
@@ -264,8 +294,10 @@ rc("animation", html="jshtml")
 plt.close()
 anim.save("./plot10.gif", writer='imagemagick')
 `}
-            </code>
-          </pre>
+                </code>
+              </pre>
+            </AccordionDetails>
+          </Accordion>
         </MathJaxContext>
         <Accordion
           sx={{
@@ -289,7 +321,11 @@ anim.save("./plot10.gif", writer='imagemagick')
             <ul>
               <li className="py-1">巽 友正. 流体力学. (1982). 培風館.</li>
               <li className="py-1">
-                2021年度東大理学部物理学科アクティブマター班. (2021). 流体モデルのシミュレーション. <Link href="https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/">https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/</Link>
+                2021年度東大理学部物理学科アクティブマター班. (2021).
+                流体モデルのシミュレーション.{" "}
+                <Link href="https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/">
+                  https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/
+                </Link>
               </li>
             </ul>
           </AccordionDetails>
