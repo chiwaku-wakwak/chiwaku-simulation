@@ -182,7 +182,7 @@ export default function Home() {
 
           <div className="pb-3">
             <Link
-              href="/kh-instability"
+              href="/kelvin-helmholtz"
               className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
             >
               読む <ChevronRight className="inline ml-2" />
