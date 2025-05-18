@@ -31,10 +31,10 @@ const Header: React.FC = () => {
               {/* タイトルテキスト */}
               <div className="flex flex-col leading-tight">
                 <p className="text-lg md:text-xl font-semibold text-gray-700 lg:text-xl">
-                  地惑、わくわく。2025
+                  <code>Chiwaku Wakwak</code>
                 </p>
                 <p className="text-lg md:text-xl font-semibold text-gray-700 lg:text-xl">
-                  シミュレーション班
+                  <code>Simulation 2025</code>
                 </p>
               </div>
             </Link>

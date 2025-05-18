@@ -14,7 +14,7 @@ const App: React.FC = () => {
     <FootnoteProvider>
       <Header />
       {/* pt-20 = padding-top: 5rem (＝約80px。Header 高さに応じて調整) */}
-      <main className="pt-23 pb-10 px-4 text-left lg:px-20 lg:pt-30">
+      <main className="pt-25 pb-10 px-4 text-left lg:px-20 lg:pt-30">
         <h1
           className="text-2xl font-bold text-gray-800 text-left border-b-2 border-green-500 pb-0 inline-block lg:text-3xl"
           id="simulation"
