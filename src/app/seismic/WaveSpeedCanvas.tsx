@@ -429,7 +429,7 @@ const WaveSpeedCanvas: React.FC = () => {
               地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、さまざまな地下構造で波の伝わり方をシミュレートできます（開発中の画面です）。
             </p>
             <Image
-              src="/simulation_photo.png"
+              src="/seismic_simulation.png"
               alt="シミュレーション班の写真"
               width={450}
               height={350}

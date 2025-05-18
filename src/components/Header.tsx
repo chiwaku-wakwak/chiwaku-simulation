@@ -69,7 +69,7 @@ const Header: React.FC = () => {
             重力レンズ
           </Link>
           <Link
-            href="https://github.com/random776/seismic_tsx"
+            href="https://github.com/chiwaku-wakwak"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700"
@@ -111,7 +111,7 @@ const Header: React.FC = () => {
               重力レンズ
             </Link>
             <Link
-              href="https://github.com/random776/seismic_tsx"
+              href="https://github.com/chiwaku-wakwak"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

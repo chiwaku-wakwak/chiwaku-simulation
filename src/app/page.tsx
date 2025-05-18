@@ -224,6 +224,22 @@ export default function Home() {
               調べる <ChevronRight className="inline ml-2" />
             </Link>
           </div>
+
+          <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            シミュレーション班公式GitHub
+          </h2>
+
+          <p className="mb-2 py-3">
+            今回の展示に使ったソースコードを、こちらの「GitHub」と呼ばれるプラットフォームに掲載しています。ぜひご参照ください！
+          </p>
+          <div className="pb-3">
+            <Link
+              href="https://github.com/chiwaku-wakwak"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+              閲覧する <ChevronRight className="inline ml-2" />
+            </Link>
+          </div>
         </div>
       </div>
       <Footer />

@@ -55,7 +55,8 @@ const App: React.FC = () => {
             トランジット法
           </Link>
           など、いくつかの方法が知られています。今回紹介するのは、その中でも、
-          <span className="font-bold">重力マイクロレンズ法</span>と呼ばれる方法です。
+          <span className="font-bold">重力マイクロレンズ法</span>
+          と呼ばれる方法です。
         </p>
         <h2 className="text-xl font-bold text-gray-800 mt-6 mb-2">
           重力マイクロレンズ法ってどんな手法？
@@ -116,9 +117,12 @@ const App: React.FC = () => {
           <Footnote number={1}>
             「五次方程式は代数的に解けない（解の公式がない）」ことが知られています。なんとか数値的に解く術はありますが、計算量が膨大になるため、注意が必要です。
           </Footnote>
-          」と悪戦苦闘していました<Footnote number={2}>
-            「重力マイクロレンズシミュレーションをやろうといったの誰だよ」と嘆いていました...^_^; ちなみに考案者は僕ではありません（編者Tより）。
-          </Footnote>。
+          」と悪戦苦闘していました
+          <Footnote number={2}>
+            「重力マイクロレンズシミュレーションをやろうといったの誰だよ」と嘆いていました...^_^;
+            ちなみに考案者は僕ではありません（編者Tより）。
+          </Footnote>
+          。
         </p>
         <p className="text-gray-700 mb-4">
           この問題はなんとか解決したのですが、シミュレーションの実行には、膨大な計算量が必要です。時間分解能によって計算にかかる時間が大きく異なるため、その周辺の微調整を強いられました。
@@ -143,24 +147,26 @@ const App: React.FC = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <ul>
-              <li className="py-1">
-                NASA Exoplanet Science Institute. (n.d.). NASA exoplanet
-                archive. California Institute of Technology.{" "}
-                <Link href="https://exoplanetarchive.ipac.caltech.edu/index.html">
-                  https://exoplanetarchive.ipac.caltech.edu/index.html
-                </Link>
-              </li>
-              <li className="py-1">
-                河原創. (2018). 系外惑星探査 地球外生命をめざして.
-                東京大学出版会.
-              </li>
-              <li className="py-1">
-                B. Scott Gaudi. (2012) Microlensing Surveys for Exoplanets.
-                Annual Review of Astronomy andAstrophysics, 50, 411–53.
-                10.1146/annurev-astro-081811-12551812
-              </li>
-            </ul>
+            <div className="overflow-scroll">
+              <ul>
+                <li className="py-1">
+                  NASA Exoplanet Science Institute. (n.d.). NASA exoplanet
+                  archive. California Institute of Technology.{" "}
+                  <Link href="https://exoplanetarchive.ipac.caltech.edu/index.html">
+                    https://exoplanetarchive.ipac.caltech.edu/index.html
+                  </Link>
+                </li>
+                <li className="py-1">
+                  河原創. (2018). 系外惑星探査 地球外生命をめざして.
+                  東京大学出版会.
+                </li>
+                <li className="py-1">
+                  B. Scott Gaudi. (2012) Microlensing Surveys for Exoplanets.
+                  Annual Review of Astronomy andAstrophysics, 50, 411–53.
+                  10.1146/annurev-astro-081811-12551812
+                </li>
+              </ul>
+            </div>
           </AccordionDetails>
         </Accordion>
         <FootnoteList />

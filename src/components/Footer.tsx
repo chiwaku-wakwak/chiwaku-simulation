@@ -29,7 +29,7 @@ export default function Footer() {
             重力レンズ
           </Link>
           <a
-            href="https://github.com/random776/seismic_tsx"
+            href="https://github.com/chiwaku-wakwak"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"

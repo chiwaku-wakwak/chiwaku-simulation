@@ -170,9 +170,12 @@ const App: React.FC = () => {
           </h2>
           <p className="text-gray-700 mb-4">
             ここでは、実際に作成したプログラムを紹介します。PythonのJupyter
-            Notebookのローカル環境で実行しました。環境によってはもしかしたら動かないかもしれないので、ご了承ください<Footnote number={3}>
-              Google Colaboratoryでも実行したのですが、微妙に変な挙動をします（結果の出力はされるのですが...）
-            </Footnote>。
+            Notebookのローカル環境で実行しました。環境によってはもしかしたら動かないかもしれないので、ご了承ください
+            <Footnote number={3}>
+              Google
+              Colaboratoryでも実行したのですが、微妙に変な挙動をします（結果の出力はされるのですが...）
+            </Footnote>
+            。
           </p>
           <p className="text-gray-700 mb-4">
             ところで、手軽にPythonを始めたい人は、
@@ -318,16 +321,18 @@ anim.save("./plot10.gif", writer='imagemagick')
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <ul>
-              <li className="py-1">巽 友正. 流体力学. (1982). 培風館.</li>
-              <li className="py-1">
-                2021年度東大理学部物理学科アクティブマター班. (2021).
-                流体モデルのシミュレーション.{" "}
-                <Link href="https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/">
-                  https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/
-                </Link>
-              </li>
-            </ul>
+            <div className="overflow-scroll">
+              <ul>
+                <li className="py-1">巽 友正. 流体力学. (1982). 培風館.</li>
+                <li className="py-1">
+                  2021年度東大理学部物理学科アクティブマター班. (2021).
+                  流体モデルのシミュレーション.{" "}
+                  <Link href="https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/">
+                    https://event.phys.s.u-tokyo.ac.jp/physlab2021/articles/zj1e8jlry75q/
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </AccordionDetails>
         </Accordion>
         <FootnoteList />
