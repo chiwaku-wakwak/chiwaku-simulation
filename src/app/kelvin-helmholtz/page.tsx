@@ -169,11 +169,11 @@ const App: React.FC = () => {
             付録：実際に作成したプログラム
           </h2>
           <p className="text-gray-700 mb-4">
-            ここでは、実際に作成したプログラムを紹介します。PythonのJupyter
+            ここでは、実際に作成したプログラムを紹介します（可視化の方法が少し違うため、図1の見栄えとは多少異なる）。PythonのJupyter
             Notebookのローカル環境で実行しました。環境によってはもしかしたら動かないかもしれないので、ご了承ください
             <Footnote number={3}>
               Google
-              Colaboratoryでも実行したのですが、微妙に変な挙動をします（結果の出力はされるのですが...）
+              Colaboratoryでの実行はできることを確認済み（2025年5月時点）。
             </Footnote>
             。
           </p>
@@ -222,6 +222,7 @@ nu = 1e-4
 steps = 30000
 
 # --- 通し番号と画像を保存する配列 ---
+
 i = 0
 ims = []
 
@@ -245,57 +246,64 @@ vorticity = -(U0 / delta) * (1 / np.cosh((Y - Ly/2) / delta))**2
 mode_x = 2
 disturbance = .02 * np.random.randn(Ny, Nx)
 vorticity += disturbance
+# vorticity += 0.2 * np.sin(2 * np.pi * mode_x * X/Lx)
 
 omega_hat = np.fft.fft2(vorticity)
 
 # --- アニメーション準備 ---
 fig, ax = plt.subplots(figsize=(6, 5))
-contour = ax.contourf(X, Y, vorticity, levels=50, cmap='RdBu', alpha=0.7)
-cbar = plt.colorbar(contour, ax=ax)
+im = ax.imshow(vorticity, extent=[0, Lx, 0, Ly], origin='lower',
+               cmap='RdBu', animated=True)
+cbar = plt.colorbar(im, ax=ax)
 cbar.set_label("Vorticity")
 title = ax.set_title("KH Instability Simulation")
 time_text = ax.text(0.8, 1.02, f"t = {0:.4f}", fontsize="small", transform=ax.transAxes)
 ims = [[im, time_text]]
 
-def dealias(f_hat):
-    cutoff_x = int(Nx * 2/3)
-    cutoff_y = int(Ny * 2/3)
-    f_hat[cutoff_y:Ny - cutoff_y, :] = 0
-    f_hat[:, cutoff_x:Nx - cutoff_x] = 0
-    return f_hat
+# --- メインループ ---
+for i in range(1, steps):
 
-for i in range(steps):
+     # ψ の計算
+    psi_hat = - omega_hat / K2
 
-    # ψ の計算
-    psi_hat = omega_hat / K2
+    #u_hat, v_hat の計算
 
-    # 速度計算
-    u = np.fft.ifft2(1j * KY * psi_hat)
-    v = -np.fft.ifft2(1j * KX * psi_hat)
+    u_hat = 1j * KY * psi_hat
+    v_hat = 1j * KX * psi_hat
 
-    # 対流・拡散項
-    dwdx = np.fft.ifft2(1j * KX * omega_hat)
-    dwdy = np.fft.ifft2(1j * KY * omega_hat)
-    convection = np.real(u * dwdx + v * dwdy)
-    diffusion = nu * np.real(np.fft.ifft2(-K2 * omega_hat))
+    #dwdx_hat, dwdy_hat の計算
+    dwdx_hat = 1j * KX * omega_hat
+    dwdy_hat = 1j * KY * omega_hat
 
-    # Euler更新
-    omega = np.real(np.fft.ifft2(omega_hat))
-    omega += dt * (-convection + diffusion)
-    omega_hat = np.fft.fft2(omega)
+    u = -np.real(np.fft.ifft2(u_hat))
+    v = np.real(np.fft.ifft2(v_hat))
+    dwdx = np.real(np.fft.ifft2(dwdx_hat))
+    dwdy = np.real(np.fft.ifft2(dwdy_hat))
+
+    nonlinear = u * dwdx + v * dwdy
+    nonlinear_hat = np.fft.fft2(nonlinear)
+    
+
+    omega_hat += dt * (-nu * K2 * omega_hat - nonlinear_hat)
 
     # 描画更新
     if (i % 1000 == 0 or i == 0) and (i < steps):
+        # Euler更新
+        omega = np.real(np.fft.ifft2(omega_hat))
         im = ax.imshow(omega, extent=[0, Lx, 0, Ly], origin='lower',
-        cmap='RdBu', vmin=-20, vmax=2, animated=True)
+                       cmap='RdBu', animated=True)
         time_text = ax.text(0.8, 1.02, f"t = {i*dt:.4f}", fontsize="small", transform=ax.transAxes)
         ims.append([im, time_text])
 
+    i += 1
+
 # --- アニメーション作成 ---
 anim = animation.ArtistAnimation(fig, ims, interval=150, blit=True)
+
 rc("animation", html="jshtml")
 plt.close()
-anim.save("./plot10.gif", writer='imagemagick')
+anim.save("./plot4.gif",writer='imagemagick') # gif で保存
+anim
 `}
                 </code>
               </pre>
