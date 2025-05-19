@@ -29,7 +29,7 @@ const App: React.FC = () => {
           </li>
           <li className="mb-1 py-1">
             安田講堂の背後に、「理学部1号館」があります。
-            <span className="font-bold">写真に写っているのが西棟です</span>。
+            <span className="font-bold">写真に写っているのが西棟です</span>
             <Footnote number={1}>
               写真に撮るとき、どうしても安田講堂と理学部一号館は一緒に写ってしまいます。理学部一号館が安田講堂の景観を邪魔をしているとも、安田講堂が理学部一号館の景観の邪魔をしているとも言われます。
             </Footnote>
