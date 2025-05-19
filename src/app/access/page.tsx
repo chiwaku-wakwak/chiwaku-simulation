@@ -19,7 +19,7 @@ const App: React.FC = () => {
           アクセス（Google Map）
         </h1>
         <p className="text-gray-700 py-3">
-          シミュレーション班の展示は、東京大学本郷キャンパス
+          シミュレーション班を含む展示企画の出展は、東京大学本郷キャンパス
           <span className="font-bold">理学部1号館（西棟）105教室</span>
           で開催します。
         </p>
