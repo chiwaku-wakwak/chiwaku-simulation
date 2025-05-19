@@ -72,7 +72,7 @@ export default function Home() {
         <p className="mb-2 pt-3">
           私たちは、理学部地球惑星系2学科の「
           <span className="font-bold">シミュレーション班</span>
-          」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！
+          」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！<span className="font-bold">理学部1号館・105教室</span>にて、皆様をお待ちしております。
         </p>
         <p className="mb-2 pt-1">
           なお、
@@ -88,6 +88,14 @@ export default function Home() {
           </Link>
           です（当班のサイトのみ別のシステムが必要であるため、このように特設サイトを設置しております）。
         </p>
+        <div className="py-3">
+            <Link
+              href="/access"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+              アクセス <ChevronRight className="inline ml-2" />
+            </Link>
+          </div>
         <h2
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
           id="simulation"
@@ -166,7 +174,7 @@ export default function Home() {
           本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
         </p>
         <p className="mb-2">
-          こちらのQRコードまたはこちらのリンク（今はダミーです！！！）
+          こちらのリンク（今はダミーです！！！）
           から投票をよろしくお願いします！
         </p>
       </div>

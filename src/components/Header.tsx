@@ -119,12 +119,19 @@ const Header: React.FC = () => {
               重力レンズ
             </Link>
             <Link
+              href="/access"
+              onClick={() => setIsOpen(false)}
+              className={isActive("/pendulum")}
+            >
+              アクセスマップ
+            </Link>
+            <Link
               href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700"
             >
-              地惑全体
+              地惑全体企画ページ
             </Link>
             <Link
               href="https://github.com/chiwaku-wakwak"
