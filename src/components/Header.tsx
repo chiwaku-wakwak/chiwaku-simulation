@@ -69,6 +69,14 @@ const Header: React.FC = () => {
             重力レンズ
           </Link>
           <Link
+            href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700"
+          >
+            地惑全体
+          </Link>
+          <Link
             href="https://github.com/chiwaku-wakwak"
             target="_blank"
             rel="noopener noreferrer"
@@ -109,6 +117,14 @@ const Header: React.FC = () => {
               className={isActive("/gravitational-lens")}
             >
               重力レンズ
+            </Link>
+            <Link
+              href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700"
+            >
+              地惑全体
             </Link>
             <Link
               href="https://github.com/chiwaku-wakwak"

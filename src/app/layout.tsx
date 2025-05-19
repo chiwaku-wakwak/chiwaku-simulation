@@ -15,9 +15,34 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "「地惑、わくわく。」2025：シミュレーション班",
   description:
-    "こんにちは。理学部地球惑星物理・環境学科シミュレーション班です。理学部1号館105教室でシミュレーションを展示します。",
+    "理学部地球惑星物理・環境学科シミュレーション班による展示。理学部1号館105教室で開催！",
   verification: {
     google: "3JinIgk3G3gjw9hWk90ReWaJhCl1ledsb7jzFV5Qwo0",
+  },
+  openGraph: {
+    title: "「地惑、わくわく。」2025：シミュレーション班",
+    description:
+      "理学部地球惑星物理・環境学科シミュレーション班による展示。理学部1号館105教室で開催！",
+    url: "https://chiwaku-simulation-2025.vercel.app/", // ←本番URLに書き換えてください
+    siteName: "地惑シミュレーション班2025",
+    images: [
+      {
+        url: "https://chiwaku-simulation-2025.vercel.app/kelvin-helmholtz.jpg", // ← OGP画像のURL
+        width: 400,
+        height: 400,
+        alt: "地惑2025シミュレーション展示の告知画像",
+      },
+    ],
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "「地惑、わくわく。」2025：シミュレーション班",
+    description:
+      "地球惑星物理・環境学科シミュレーション班が理学部1号館105教室で展示中！",
+    images: ["https://chiwaku-simulation-2025.vercel.app/kelvin-helmholtz.jpg"],
+    creator: "@chiwaku_waku", // ← 任意：Twitter IDがあれば入れる
   },
 };
 
