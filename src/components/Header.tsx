@@ -121,7 +121,7 @@ const Header: React.FC = () => {
             <Link
               href="/access"
               onClick={() => setIsOpen(false)}
-              className={isActive("/pendulum")}
+              className={isActive("/access")}
             >
               アクセスマップ
             </Link>
