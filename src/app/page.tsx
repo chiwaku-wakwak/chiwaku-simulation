@@ -67,7 +67,7 @@ export default function Home() {
         </h2>
 
         <p className="mb-2 pt-3">
-          私たちは、理学部地球惑星系2学科の「
+          私たちは、理学部地球惑星系2学科の五月祭「
           <span className="font-bold">シミュレーション班</span>
           」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！
           <span className="font-bold">理学部1号館・105教室</span>
