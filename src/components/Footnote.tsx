@@ -15,7 +15,7 @@ const Footnote = ({ number, children }: Props) => {
   }, [number, children]);
 
   return (
-    <sup className="text-blue-600 cursor-pointer hover:underline" id={`fn-ref-${number}`}>
+    <sup className="text-blue-600 cursor-pointer hover:underline scroll-mt-25" id={`fn-ref-${number}`}>
       <a href={`#fn-${number}`}>[{number}]</a>
     </sup>
   );

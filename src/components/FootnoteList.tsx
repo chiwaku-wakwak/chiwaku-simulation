@@ -15,12 +15,7 @@ const FootnoteList = () => {
         {footnotes
           .sort((a, b) => a.number - b.number)
           .map(({ number, content }) => (
-            <li key={number} id={`fn-${number}`} className="relative">
-              <span
-                className="block absolute -top-20"
-                aria-hidden="true"
-                id={`fn-${number}`}
-              ></span>
+            <li key={number} id={`fn-${number}`}>
               {content}
               <Link
                 href={`#fn-ref-${number}`}
