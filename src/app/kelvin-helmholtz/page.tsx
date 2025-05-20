@@ -79,6 +79,7 @@ const App: React.FC = () => {
             width={500}
             height={500}
             className="rounded-lg shadow-lg mx-auto"
+            unoptimized
           />
           <figcaption className="text-center text-sm text-gray-600 mt-2">
             図1:
