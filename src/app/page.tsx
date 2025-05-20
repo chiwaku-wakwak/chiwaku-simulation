@@ -47,9 +47,9 @@ export default function Home() {
             <Scroll
               to="simulation"
               smooth={true}
-              duration={400}
-              offset={-30}
-              className="inline-block px-6 py-2 border border-sky-300 bg-sky-500 hover:bg-sky-600 hover:border-sky-500 text-white text-lg font-semibold rounded-4xl shadow-md transition"
+              duration={600} // ミリ秒でスクロール時間を指定
+              offset={-128} // 固定ヘッダーがあれば、その高さ分マイナスにする
+              className="inline-block px-6 py-2 border border-sky-300 bg-sky-500 hover:bg-sky-600 hover:border-sky-500 text-white text-lg font-semibold rounded-4xl shadow-md transition cursor-pointer"
             >
               はじめる <ChevronDown className="inline ml-2" />
             </Scroll>
@@ -57,10 +57,7 @@ export default function Home() {
           <div className="flex justify-end py-10 lg:py-0 px-2"></div>
         </div>
       </div>
-      <div
-        className="flex-grow pt-0 pb-5 px-4 lg:px-25 lg:py-0 opacity-0"
-        id="simulation"
-      ></div>
+      <div id="simulation" className="scroll-mt-32"></div>
       <div className="flex-grow pt-0 pb-10 px-4 lg:px-25 bg-white">
         <h2
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
@@ -72,7 +69,9 @@ export default function Home() {
         <p className="mb-2 pt-3">
           私たちは、理学部地球惑星系2学科の「
           <span className="font-bold">シミュレーション班</span>
-          」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！<span className="font-bold">理学部1号館・105教室</span>にて、皆様をお待ちしております。
+          」です。「二重振り子」「地震波伝播」「重力マイクロレンズ法」のシミュレーションを展示します！
+          <span className="font-bold">理学部1号館・105教室</span>
+          にて、皆様をお待ちしております。
         </p>
         <p className="mb-2 pt-1">
           なお、
@@ -89,13 +88,13 @@ export default function Home() {
           です（当班のサイトのみ別のシステムが必要であるため、このように特設サイトを設置しております）。
         </p>
         <div className="py-3">
-            <Link
-              href="/access"
-              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
-            >
-              アクセス <ChevronRight className="inline ml-2" />
-            </Link>
-          </div>
+          <Link
+            href="/access"
+            className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+          >
+            アクセス <ChevronRight className="inline ml-2" />
+          </Link>
+        </div>
         <h2
           className="text-xl py-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block"
           id="simulation"
