@@ -129,7 +129,7 @@ export default function Home() {
           <Link href="/seismic" className="h-full">
             <div className="border-[0.5px] border-[#6a75e1] h-full flex flex-col rounded-xl p-4 shadow-sm hover:bg-gray-50 transition">
               <Image
-                src="/seismic.jpg"
+                src="/seismic_sim.jpg"
                 alt="地震波伝播シミュレーション"
                 width={500}
                 height={400}
