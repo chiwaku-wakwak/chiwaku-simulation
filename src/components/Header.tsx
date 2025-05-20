@@ -5,9 +5,11 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [simDropdownOpen, setSimDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href: string) =>
@@ -56,22 +58,41 @@ const Header: React.FC = () => {
           <Link href="/" className={isActive("/")}>
             ホーム
           </Link>
-          <Link href="/pendulum" className={isActive("/pendulum")}>
-            二重振り子
-          </Link>
-          <Link href="/seismic" className={isActive("/seismic")}>
-            地震波
-          </Link>
-          <Link
-            href="/gravitational-lens"
-            className={isActive("/gravitational-lens")}
-          >
-            重力レンズ
-          </Link>
-          <Link
-            href="/access"
-            className={isActive("/access")}
-          >
+          <div className="relative group">
+            <button
+              onClick={() => setSimDropdownOpen(!simDropdownOpen)}
+              className={`hover:text-blue-600 ${
+                pathname.startsWith("/pendulum") ||
+                pathname.startsWith("/seismic") ||
+                pathname.startsWith("/gravitational-lens")
+                  ? "text-blue-600 font-semibold"
+                  : ""
+              }`}
+            >
+              展示紹介 <ChevronDown className="w-5 h-5 inline" />
+            </button>
+            <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 z-50">
+              <Link
+                href="/pendulum"
+                className="block w-50 px-4 py-2 hover:bg-gray-100"
+              >
+                二重振り子
+              </Link>
+              <Link
+                href="/seismic"
+                className="block w-50 px-4 py-2 hover:bg-gray-100"
+              >
+                地震波
+              </Link>
+              <Link
+                href="/gravitational-lens"
+                className="block w-50 px-4 py-2 hover:bg-gray-100"
+              >
+                重力レンズ
+              </Link>
+            </div>
+          </div>
+          <Link href="/access" className={isActive("/access")}>
             アクセスマップ
           </Link>
           <Link
@@ -114,33 +135,60 @@ const Header: React.FC = () => {
               >
                 ホーム
               </Link>
-              <Link
-                href="/pendulum"
-                onClick={() => setIsOpen(false)}
-                className={isActive("/pendulum")}
+              {/* ▼ ドロップダウンの親ボタン */}
+              <button
+                onClick={() => setSimDropdownOpen(!simDropdownOpen)}
+                className="text-left flex items-center space-x-1"
               >
-                二重振り子
-              </Link>
-              <Link
-                href="/seismic"
-                onClick={() => setIsOpen(false)}
-                className={isActive("/seismic")}
-              >
-                地震波
-              </Link>
-              <Link
-                href="/gravitational-lens"
-                onClick={() => setIsOpen(false)}
-                className={isActive("/gravitational-lens")}
-              >
-                重力レンズ
-              </Link>
+                {simDropdownOpen ? (
+                  <ChevronUp className="w-5 h-5 inline" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 inline" />
+                )}
+                <span>展示紹介</span>
+              </button>
+
+              {/* ▼ ドロップダウンメニュー */}
+              {simDropdownOpen && (
+                <div className="pl-4 flex flex-col space-y-1">
+                  <Link
+                    href="/pendulum"
+                    onClick={() => {
+                      setSimDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                    className={isActive("/pendulum")}
+                  >
+                    二重振り子
+                  </Link>
+                  <Link
+                    href="/seismic"
+                    onClick={() => {
+                      setSimDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                    className={isActive("/seismic")}
+                  >
+                    地震波
+                  </Link>
+                  <Link
+                    href="/gravitational-lens"
+                    onClick={() => {
+                      setSimDropdownOpen(false);
+                      setIsOpen(false);
+                    }}
+                    className={isActive("/gravitational-lens")}
+                  >
+                    重力レンズ
+                  </Link>
+                </div>
+              )}
               <Link
                 href="/access"
                 onClick={() => setIsOpen(false)}
                 className={isActive("/access")}
               >
-                アクセス
+                アクセスマップ
               </Link>
               <Link
                 href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
