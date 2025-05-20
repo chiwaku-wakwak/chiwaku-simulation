@@ -69,7 +69,7 @@ const App: React.FC = () => {
           これは、「
           <span className="font-bold">ケルヴィン・ヘルムホルツ不安定性</span>
           （Kelvin-Helmholtz
-          instability、以下KH不安定性）」と呼ばれる現象をシミュレートしたものです。流体内で大きな速度差がある時に、わずかに揺らぎを与えると、流体の表面に波が立ちます。
+          instability、以下KH不安定性）」と呼ばれる現象をシミュレートしたものです。流体内で大きな速度差がある時に、わずかに揺らぎを与えると、速度差のある境目に波が立ちます。
         </p>
 
         <figure className="my-3">
