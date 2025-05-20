@@ -173,8 +173,8 @@ export default function Home() {
           本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
         </p>
         <p className="mb-2">
-          こちらのリンク（今はダミーです！！！）
-          から投票をよろしくお願いします！
+          当日は、<Link href="https://gogatsusai.jp/98/visitor/project/184" className="font-bold text-sky-700 hover:underline">こちらのリンク</Link>からご投票になれます。
+          みなさまの投票をよろしくお願いします！
         </p>
       </div>
       <div className="">
@@ -237,7 +237,7 @@ export default function Home() {
           </h2>
 
           <p className="mb-2 py-3">
-            今回の展示に使ったソースコードを、こちらの「GitHub」と呼ばれるプラットフォームに掲載しています。ぜひご参照ください！
+            今回の展示に使ったソースコードを、こちらの「GitHub」と呼ばれるプラットフォームに掲載しています（随時更新です）。ぜひご参照ください！
           </p>
           <div className="pb-3">
             <Link

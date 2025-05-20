@@ -74,19 +74,19 @@ const Header: React.FC = () => {
             <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 z-50">
               <Link
                 href="/pendulum"
-                className="block w-50 px-4 py-2 hover:bg-gray-100"
+                className="block w-40 px-4 py-2 hover:bg-gray-100"
               >
                 二重振り子
               </Link>
               <Link
                 href="/seismic"
-                className="block w-50 px-4 py-2 hover:bg-gray-100"
+                className="block w-40 px-4 py-2 hover:bg-gray-100"
               >
                 地震波
               </Link>
               <Link
                 href="/gravitational-lens"
-                className="block w-50 px-4 py-2 hover:bg-gray-100"
+                className="block w-40 px-4 py-2 hover:bg-gray-100"
               >
                 重力レンズ
               </Link>
