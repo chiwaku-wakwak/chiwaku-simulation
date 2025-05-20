@@ -23,16 +23,18 @@ function waveSpeed2(x: number, y: number, num: number): number {
     else return 0.2 * -y + 4.6;
   } else {
     if (y > 0) return 0;
-    else if (-5 > y && y > -10 && x > 5 && 10 > x) return 3.0;
-    else return 0.4 * -y + 1.0;
+    else if (0 < -y && -y <= 4) return -(-y) + 6.0;
+    else if (4 < -y && -y <= 6) return 2.0;
+    else if (6 < -y) return (-y) - 4.0;
+    else return 6.0;
   }
 }
 
-function gradvx(x: number, y: number, num: number, dx = 1e-5): number {
+function gradvx(x: number, y: number, num: number, dx = 1e-7): number {
   return (waveSpeed2(x + dx, y, num) - waveSpeed2(x - dx, y, num)) / (2 * dx);
 }
 
-function gradvy(x: number, y: number, num: number, dy = 1e-5): number {
+function gradvy(x: number, y: number, num: number, dy = 1e-7): number {
   return (waveSpeed2(x, y + dy, num) - waveSpeed2(x, y - dy, num)) / (2 * dy);
 }
 
@@ -426,7 +428,7 @@ const WaveSpeedCanvas: React.FC = () => {
               地下の震源から発生した地震波が広がる様子を再現しています。地中は均一な物質でできているとは限らないので、場合によって複雑な伝わり方をします。
             </p>
             <p className="py-2">
-              地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、さまざまな地下構造で波の伝わり方をシミュレートできます（開発中の画面です）。
+              地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、<span className="font-bold">さまざまな条件設定・地下構造で波の伝わり方をシミュレート</span>できます（以下は開発中の画面です）。
             </p>
             <Image
               src="/seismic_simulation.png"
