@@ -89,62 +89,43 @@ const Header: React.FC = () => {
 
       {/* ナビゲーション（モバイル） */}
       {isOpen && (
-        <div className="lg:hidden px-4 py-6 pb-3 bg-white">
-          <nav className="flex flex-col space-y-2 text-gray-700 text-sm">
-            <Link
-              href="/"
-              onClick={() => setIsOpen(false)}
-              className={isActive("/")}
-            >
-              ホーム
-            </Link>
-            <Link
-              href="/pendulum"
-              onClick={() => setIsOpen(false)}
-              className={isActive("/pendulum")}
-            >
-              二重振り子
-            </Link>
-            <Link
-              href="/seismic"
-              onClick={() => setIsOpen(false)}
-              className={isActive("/seismic")}
-            >
-              地震波
-            </Link>
-            <Link
-              href="/gravitational-lens"
-              className={isActive("/gravitational-lens")}
-            >
-              重力レンズ
-            </Link>
-            <Link
-              href="/access"
-              onClick={() => setIsOpen(false)}
-              className={isActive("/access")}
-            >
-              アクセスマップ
-            </Link>
-            <Link
-              href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-700"
-            >
-              地惑全体企画ページ
-            </Link>
-            <Link
-              href="https://github.com/chiwaku-wakwak"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700"
-            >
-              GitHub
-            </Link>
-          </nav>
-        </div>
-      )}
+  // オーバーレイ
+  <div
+    className="fixed inset-0 z-40 bg-opacity-25" // ← 背景を暗くしてクリック領域を明確化
+    onClick={(e) => {
+      if (e.target === e.currentTarget) {
+        setIsOpen(false); // ← 背景クリックで閉じる
+      }
+    }}
+  >
+    {/* メニュー自体 */}
+    <div className="absolute top-16 left-0 w-full bg-white shadow-lg z-50 px-4 py-10 mt-1 pb-3">
+      <nav className="flex flex-col space-y-2 text-gray-700 text-sm">
+        <Link href="/" onClick={() => setIsOpen(false)} className={isActive("/")}>
+          ホーム
+        </Link>
+        <Link href="/pendulum" onClick={() => setIsOpen(false)} className={isActive("/pendulum")}>
+          二重振り子
+        </Link>
+        <Link href="/seismic" onClick={() => setIsOpen(false)} className={isActive("/seismic")}>
+          地震波
+        </Link>
+        <Link href="/gravitational-lens" onClick={() => setIsOpen(false)} className={isActive("/gravitational-lens")}>
+          重力レンズ
+        </Link>
+        <Link href="/access" onClick={() => setIsOpen(false)} className={isActive("/access")}>
+          アクセスマップ
+        </Link>
+        <Link href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025" target="_blank" rel="noopener noreferrer" className="text-gray-700">
+          地惑全体企画ページ
+        </Link>
+        <Link href="https://github.com/chiwaku-wakwak" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="text-gray-700">
+          GitHub
+        </Link>
+      </nav>
+    </div>
+  </div>
+)}
     </header>
   );
 };
