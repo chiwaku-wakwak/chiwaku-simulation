@@ -437,6 +437,22 @@ const WaveSpeedCanvas: React.FC = () => {
               height={350}
               className="rounded-md mb-2 object-contain"
             />
+            <p className="font-bold py-2">
+               追記 （2025年5月21日）
+            </p>
+            <p className="py-1">
+              この簡易版シミュレーションでは、2つのバージョンを用意しました（下の図）。1つ目は、速度の躍層がある場合（左）、2つ目は、速度のz方向に対する傾きがある深さで切り替わる場合（右）です。
+            </p>
+            <p className="py-1">
+              時間発展には1次精度のオイラー法を用い、スネルの法則を拡張した式を用いています。
+            </p>
+            <Image
+              src="/velocity.jpg"
+              alt="速度分布"
+              width={450}
+              height={350}
+              className="rounded-md mb-2 object-contain"
+            />
           </AccordionDetails>
         </Accordion>
         <Accordion
