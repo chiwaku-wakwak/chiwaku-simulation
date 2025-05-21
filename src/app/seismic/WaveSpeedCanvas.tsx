@@ -23,7 +23,7 @@ function waveSpeed2(x: number, y: number, num: number): number {
     else return 0.2 * -y + 4.6;
   } else {
     if (y > 0) return 0;
-    else if (0 < -y && -y <= 4) return -(-y) + 6.0;
+    else if (0 <= -y && -y <= 4) return -(-y) + 6.0;
     else if (4 < -y && -y <= 6) return 2.0;
     else if (6 < -y) return (-y) - 4.0;
     else return 6.0;
