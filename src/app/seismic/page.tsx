@@ -24,8 +24,9 @@ const App: React.FC = () => {
             地下構造探査
           </div>
         </div>
-        <p className="mb-2 py-1"><span className="font-bold">画面をタップして</span>震源位置を動かすことができます（画面中の⚫️）。</p>
-        <p className="mb-2 py-1">
+        <p className="mb-1 mt-1"><span className="font-bold">画面をタップして</span>震源位置を動かすことができます（画面中の⚫️）。</p>
+        <p className="mb-1 mt-1">モニター中の青色が濃ければ濃いほど、波の伝播が速いです。</p>
+        <p className="mb-1 mt-1">
           ⚠️ ページが正しく動かない場合は、JavaScriptが有効になっていない可能性があります。ブラウザの設定を確認してください。
         </p>
         <WaveSpeedCanvas />

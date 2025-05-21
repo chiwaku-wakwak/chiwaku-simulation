@@ -428,10 +428,10 @@ const WaveSpeedCanvas: React.FC = () => {
               地下の震源から発生した地震波が広がる様子を再現しています。地中は均一な物質でできているとは限らないので、場合によって複雑な伝わり方をします。
             </p>
             <p className="py-2">
-              地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、<span className="font-bold">さまざまな条件設定・地下構造で波の伝わり方をシミュレート</span>できます（以下は開発中の画面です）。
+              地球の内部の構造を探査するときは、この「地下構造が違うと波の伝わり方も違う」という性質が利用されています。五月祭の現地の地惑の企画では、<span className="font-bold">さまざまな条件設定・地下構造で波の伝わり方をシミュレート</span>できます（以下は開発中の画面です。大幅増強予定）。
             </p>
             <Image
-              src="/seismic_simulation.png"
+              src="/simulation_photo.png"
               alt="シミュレーション班の写真"
               width={450}
               height={350}
@@ -458,7 +458,7 @@ const WaveSpeedCanvas: React.FC = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <ul>
+            <ul className="px-3">
               <li className="py-1">
                 シミュレーションの構築には、金森博雄『地震の物理』（岩波書店、1991）を参考にしています。
               </li>

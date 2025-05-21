@@ -407,7 +407,7 @@ const DoublePendulum: React.FC = () => {
               <Typography component="span" sx={{ fontWeight: 700 }}>キーワード・参考文献</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <ul>
+              <ul className="px-3">
                 <li className="py-1">カオス理論：二重振り子では、初期条件のわずかな違いが運動に大きな影響を与えることがあります。これがカオス的な振る舞いの一例です。NHKの<Link href="https://www.nhk.jp/p/ts/Y5R676NK92/blog/bl/pmg0p5PX8L/bp/pPZlrkyg6v/" className="text-sky-700 font-bold">「笑わない数学」</Link>のブログが結構わかりやすそう（2025年5月11日閲覧）。</li>
                 <li className="py-1">今回参照した基礎方程式：Troy Shinbrot, Celso Grebogi, Jack Wisdom & James A. Yorke, “Chaos in a Double Pendulum,” Am. J. Phys., 60, 6, pp. 491-499, June 1992.</li>
               </ul>
