@@ -25,7 +25,7 @@ const App: React.FC = () => {
           className="text-2xl font-bold text-gray-800 text-left border-b-2 border-green-500 pb-0 inline-block"
           id="simulation"
         >
-          重力レンズシミュレーションについて
+          重力マイクロレンズシミュレーションについて
         </h1>
         <div className="mb-1 py-1">
           <span className="inline-block w-1 h-6 bg-white py-1 mr-2"></span>
@@ -119,7 +119,7 @@ const App: React.FC = () => {
           </Footnote>
           」と悪戦苦闘していました
           <Footnote number={2}>
-            「重力マイクロレンズシミュレーションをやろうといったの誰だよ」と嘆いていました...^_^;
+            「今回の五月祭企画で、重力マイクロレンズシミュレーションをやろうといったの誰だよ」と嘆いていました...^_^;
             ちなみに考案者は僕ではありません（編者Tより）。
           </Footnote>
           。
