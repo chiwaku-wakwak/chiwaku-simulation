@@ -55,13 +55,25 @@ function rayequation(ray: Ray, dt: number, num: number): Ray {
 function speedToColor(v: number): string {
   const clamp = (n: number, min: number, max: number) =>
     Math.max(min, Math.min(max, n));
-  const colorStops = [
-    { v: 0.0, r: 255, g: 255, b: 255 },
-    { v: 1.5, r: 135, g: 206, b: 235 },
-    { v: 3.0, r: 0, g: 191, b: 255 },
-    { v: 4.5, r: 30, g: 144, b: 255 },
-    { v: 6.0, r: 0, g: 0, b: 139 },
-  ];
+    const colorStops = [
+      { v: 0.0,  r: 255, g: 255, b: 255 },   // 白
+      { v: 0.67, r: 230, g: 245, b: 255 },   // ごく薄い水色
+      { v: 1.33, r: 200, g: 235, b: 255 },
+      { v: 2.0,  r: 173, g: 216, b: 230 },   // ライトブルー
+      { v: 2.67, r: 135, g: 206, b: 235 },   // スカイブルー
+      { v: 3.33, r: 100, g: 200, b: 255 },
+      { v: 4.0,  r: 70,  g: 180, b: 255 },
+      { v: 4.67, r: 30,  g: 144, b: 255 },   // ドッジャーブルー
+      { v: 5.33, r: 0,   g: 128, b: 255 },
+      { v: 6.0,  r: 0,   g: 100, b: 255 },
+      { v: 6.67, r: 0,   g: 0,   b: 255 },   // 青
+      { v: 7.33, r: 0,   g: 0,   b: 205 },   // ミディアムブルー
+      { v: 8.0,  r: 0,   g: 0,   b: 170 },
+      { v: 8.67, r: 0,   g: 0,   b: 139 },   // ダークブルー
+      { v: 9.33, r: 0,   g: 0,   b: 110 },
+      { v: 10.0, r: 25,  g: 25,  b: 112 }    // ミッドナイトブルー
+    ];
+    
 
   v = clamp(v, 0, 6);
   for (let i = 0; i < colorStops.length - 1; i++) {
@@ -195,7 +207,7 @@ const WaveSpeedCanvas: React.FC = () => {
     ctx.fillRect(legendX - 5, legendY - 30, 70, legendHeight + 40);
 
     for (let i = 0; i <= numSteps; i++) {
-      const v = (i / numSteps) * 6.0;
+      const v = (i / numSteps) * 10.0;
       ctx.fillStyle = speedToColor(v);
       ctx.fillRect(
         legendX,
@@ -211,8 +223,8 @@ const WaveSpeedCanvas: React.FC = () => {
     ctx.font = "10px sans-serif";
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    ctx.fillText("6.0", legendX + 25, legendY);
-    ctx.fillText("3.0", legendX + 25, legendY + legendHeight / 2);
+    ctx.fillText("10.0", legendX + 25, legendY);
+    ctx.fillText("5.0", legendX + 25, legendY + legendHeight / 2);
     ctx.fillText("0.0", legendX + 25, legendY + legendHeight);
     ctx.fillText("速度", legendX, legendY - 15);
     ctx.fill();
@@ -438,13 +450,16 @@ const WaveSpeedCanvas: React.FC = () => {
               className="rounded-md mb-2 object-contain"
             />
             <p className="font-bold py-2">
-               追記 （2025年5月21日）
+               追記
             </p>
             <p className="py-1">
               この簡易版シミュレーションでは、2つのバージョンを用意しました（下の図）。1つ目は、速度の急勾配がある深さである場合（左）、2つ目は、速度のz方向に対する傾きがある深さで切り替わる場合（右）です。
             </p>
             <p className="py-1">
-              時間発展には1次精度のオイラー法を用い、スネルの法則を拡張した式を用いています。
+              時間発展には1次精度のオイラー法を用い、スネルの法則を拡張した式を用いています（2025年5月21日）。
+            </p>
+            <p className="py-1">
+              色のグラデーションの表示可能範囲が不十分だったので、色のグラデーションを変更しました。（2025年5月22日）。
             </p>
             <Image
               src="/velocity.jpg"
