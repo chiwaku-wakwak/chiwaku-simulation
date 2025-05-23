@@ -167,14 +167,77 @@ export default function Home() {
         <h2 className="text-xl py-5 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
           お知らせ
         </h2>
+        <h3 className="text-lg font-bold mb-2 pt-8">
+          地惑、わくわく。公式Twitter（現X）アカウント
+        </h3>
+        <p className="mb-2">
+          旧Twitter（X）で企画情報をお伝えします。ぜひフォローしてください。
+          <Link
+            href="https://x.com/chiwaku_waku"
+            className="text-sky-700 hover:underline font-bold"
+          >
+            @chiwaku_waku
+          </Link>
+        </p>
         <h3 className="text-lg font-bold mb-2 pt-8">五月祭総選挙について</h3>
         <p className="mb-2">
           皆さんのご支援が私たちの励みとなり、来年以降の展示拡充にも繋がります。
           本展示を通して地球や惑星のふしぎを感じていただけた方は、投票のご協力よろしくお願いいたします！
         </p>
+        <div className="flex flex-col bg-slate-200 p-2 rounded-md">
+          <h3 className="mb-2 font-bold underline text-lg">投票方法</h3>
+          <p className="mb-2">
+            <span className="font-bold">オンライン投票</span>の場合は、第 98 回五月祭HPの「
+            <Link
+              href="https://gogatsusai.jp/98/visitor/project/184"
+              className="font-bold text-sky-700 hover:underline"
+            >
+              企画詳細ページ
+            </Link>
+            」からご投票になれるほか、<span className="font-bold">現地投票</span>
+            もしております。投票場所は
+            <Link
+              href="https://gogatsusai.jp/98/visitor/_nuxt/mfa-map.ConIUQjC.webp"
+              className="font-bold text-sky-700 hover:underline"
+            >
+              こちら
+            </Link>
+            からご確認ください。
+          </p>
+          <h3 className="mb-2 font-bold underline text-lg">投票期間</h3>
+          <ul className="list-disc list-inside mb-2">
+            <li className="mb-2">
+              オンライン投票の場合：5月24日（土）9:00～5月25日（日）
+              <span className="font-bold">16:00</span>
+            </li>
+            <li className="mb-2">
+              現地投票の場合：
+              <ul className="list-disc list-inside pl-5 mt-1">
+                <li className="mb-1">5月24日（土） 9:00～18:00</li>
+                <li>
+                  5月25日（日） 9:00～<span className="font-bold">16:00</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <h3 className="text-lg font-bold mb-2 pt-8">
+          地惑雑誌「Solarnaut」に寄稿しました。
+        </h3>
         <p className="mb-2">
-          当日は、<Link href="https://gogatsusai.jp/98/visitor/project/184" className="font-bold text-sky-700 hover:underline">こちらのリンク</Link>からご投票になれます。
-          みなさまの投票をよろしくお願いします！
+          五月祭で販売する雑誌「
+          <Link
+            className="text-sky-700 hover:underline font-bold"
+            href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/chiwakuwakuwaku2025/contents/booklet?authuser=0"
+          >
+            Solarnaut vol.1
+          </Link>
+          」に、今回展示するシミュレーションの特集記事「
+          <span className="font-bold">
+            シミュレーション科学の世界へようこそ！
+          </span>
+          」を寄稿しました。高校生もしくはそれ以下の皆さんには割引があります！
+          ぜひお読みください。
         </p>
       </div>
       <div className="">
