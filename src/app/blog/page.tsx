@@ -36,12 +36,12 @@ const App: React.FC = () => {
           5 / 24（土）
         </h2>
         <p className="mb-2 pl-4 py-3">
-          今日は朝早くから多くの皆様にお越しいただき、ありがとうございました。小さなお子様から、地球科学マニアや研究者の方まで来ていただいて、嬉しかったです。
+          今日（5/24）は朝早くから多くの皆様にお越しいただき、ありがとうございました。小さなお子様から、地球科学マニアや研究者の方まで来ていただき、よかったです。
           特に、「重力マイクロレンズシミュレーション」に興味を持っていただいた方が予想以上に多かったです。作成に携わった学科民も非常に喜んでいます。
         </p>
         <p className="mb-2 pl-4 py-3">
           「2重振り子」に関連して、「N体運動」（複数の物体が重力などにより互いに相互作用する運動）のカオスについて興味を持たれた方がいらっしゃいました。
-          その場ではお見せできなかったのですが、それに関連したソースコードを<Link className="font-bold text-sky-700 hover:underline" href="https://github.com/chiwaku-wakwak/nbody_simulation">GitHub</Link> に掲載しました。
+          その場ではお見せできなかったので、それに関連したソースコードを<Link className="font-bold text-sky-700 hover:underline" href="https://github.com/chiwaku-wakwak/nbody_simulation">GitHub</Link> に掲載しました。
           5/25（日）も予定通り開催しますので、ぜひお越しください。
         </p>
         <figure className="my-3">
