@@ -41,7 +41,7 @@ const App: React.FC = () => {
         </p>
         <p className="mb-2 pl-4 py-3">
           「2重振り子」に関連して、「N体運動」（複数の物体が重力などにより互いに相互作用する運動）のカオスについて興味を持たれた方がいらっしゃいました。
-          その場ではお見せできなかったのですが、それに関連したソースコードを<Link className="font-bold text-sky-700 hover:underline" href="https://github.com/chiwaku-wakwak/ntai_simulation">GitHub</Link> に掲載しました。
+          その場ではお見せできなかったのですが、それに関連したソースコードを<Link className="font-bold text-sky-700 hover:underline" href="https://github.com/chiwaku-wakwak/nbody_simulation">GitHub</Link> に掲載しました。
           5/25（日）も予定通り開催しますので、ぜひお越しください。
         </p>
         <figure className="my-3">
