@@ -187,14 +187,16 @@ export default function Home() {
         <div className="flex flex-col bg-slate-200 p-2 rounded-md">
           <h3 className="mb-2 font-bold underline text-lg">投票方法</h3>
           <p className="mb-2">
-            <span className="font-bold">オンライン投票</span>の場合は、第 98 回五月祭HPの「
+            <span className="font-bold">オンライン投票</span>の場合は、第 98
+            回五月祭HPの「
             <Link
               href="https://gogatsusai.jp/98/visitor/project/184"
               className="font-bold text-sky-700 hover:underline"
             >
               企画詳細ページ
             </Link>
-            」からご投票になれるほか、<span className="font-bold">現地投票</span>
+            」からご投票になれるほか、
+            <span className="font-bold">現地投票</span>
             もしております。投票場所は
             <Link
               href="https://gogatsusai.jp/98/visitor/_nuxt/mfa-map.ConIUQjC.webp"
@@ -256,6 +258,22 @@ export default function Home() {
               className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
             >
               読む <ChevronRight className="inline ml-2" />
+            </Link>
+          </div>
+          <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
+            五月祭当日ブログ
+          </h2>
+
+          <p className="mb-2 py-3">
+            五月祭当日、展示の様子や企画の展示でお見せしきれなかったものなどを紹介します。（5月24日分更新）。
+          </p>
+
+          <div className="pb-3">
+            <Link
+              href="/blog"
+              className="inline-block px-6 py-2 border border-green-600 bg-green-300 hover:bg-green-400 hover:border-sky-500 text-sky-900 text-lg font-semibold rounded-2xl shadow-md transition"
+            >
+             読む <ChevronRight className="inline ml-2" />
             </Link>
           </div>
           <h2 className="text-xl pt-8 font-bold text-gray-800 text-left border-b-2 border-sky-500 pb-0 inline-block">
