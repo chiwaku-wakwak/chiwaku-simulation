@@ -46,7 +46,7 @@ const App: React.FC = () => {
         </p>
         <figure className="my-3">
           <Image
-            src="/trajectories.png"
+            src="/three_body.gif"
             alt="ntai simulation result"
             width={400}
             height={400}
