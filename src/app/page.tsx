@@ -65,7 +65,10 @@ export default function Home() {
         >
           このサイトについて
         </h2>
-
+        <p className="mb-2 pt-3 text-red-700">
+          2025年度の五月祭は終了いたしました。多くの来場者の方々にお越しいただき、ありがとうございました。
+          Webサイトだけでも楽しんでいただけることを心がけて制作しましたので、ゆっくりしていってください。
+        </p>
         <p className="mb-2 pt-3">
           私たちは、理学部地球惑星系2学科の五月祭「
           <span className="font-bold">シミュレーション班</span>
