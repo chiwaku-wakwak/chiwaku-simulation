@@ -71,7 +71,7 @@ const App: React.FC = () => {
         </figure>
         <h2 className="flex items-center px-3 py-2 bg-gray-100 text-gray-800 text-xl font-bold lg:text-2xl lg:w-2/3">
           <span className="inline-block w-1 h-6 bg-blue-600 py-5 mr-2"></span>5
-          / 25（土）
+          / 25（日）
         </h2>
         <p className="mb-2 pl-4 py-3">
           今日も昨日を上回る多くの方にお越しいただきまして、ありがとうございました。日本全国はるばるお越しいただき、お話できて大変こちらとしても良かったです。
